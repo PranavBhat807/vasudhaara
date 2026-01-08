@@ -10,21 +10,21 @@ import { motion } from "framer-motion";
 const PRODUCTS = [
   {
     id: 1,
-    title: "Herbal Face Wash",
+    title: "Rosy Lip Balm",
     price: 15.99,
     rating: 4.8,
     description: "Gentle cleansing with neem and turmeric.",
-    image: "https://images.unsplash.com/photo-1556228578-8d893e36eec2?q=80&w=800&auto=format&fit=crop",
+    image: "/lipbalm.jpeg",
     category: "Skin Care",
     date: "2024-01-10"
   },
   {
     id: 2,
-    title: "Organic Shampoo",
+    title: "Pain Relief Oil",
     price: 12.50,
     rating: 4.5,
     description: "Sulfate-free formula for healthy hair.",
-    image: "https://images.unsplash.com/photo-1585232975329-e0f1e298e8d9?q=80&w=800&auto=format&fit=crop",
+    image: "/pain_relief_oil.png",
     category: "Hair Care",
     date: "2024-01-12"
   },
@@ -34,7 +34,7 @@ const PRODUCTS = [
     price: 8.99,
     rating: 4.9,
     description: "Pure soothing gel for skin and hair.",
-    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop",
+    image: "/aloe_vera_gel.png",
     category: "Skin Care",
     date: "2024-01-15"
   },
@@ -44,7 +44,7 @@ const PRODUCTS = [
     price: 18.00,
     rating: 4.7,
     description: "Refreshing mist for instant hydration.",
-    image: "https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=800&auto=format&fit=crop",
+    image: "/rose_water_toner.png",
     category: "Skin Care",
     date: "2024-01-18"
   },
@@ -54,7 +54,7 @@ const PRODUCTS = [
     price: 22.50,
     rating: 4.6,
     description: "Nourishing oil with bhringraj and amla.",
-    image: "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?q=80&w=800&auto=format&fit=crop",
+    image: "/hair_oil.png",
     category: "Hair Care",
     date: "2024-01-20"
   },
@@ -64,7 +64,7 @@ const PRODUCTS = [
     price: 5.99,
     rating: 4.3,
     description: "Handmade soap with essential oils.",
-    image: "https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?q=80&w=800&auto=format&fit=crop",
+    image: "/herbal_soap.png",
     category: "Bath & Body",
     date: "2024-01-22"
   },
