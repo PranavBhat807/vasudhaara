@@ -27,7 +27,7 @@ export default function ProductCard({ title, price, description, image, rating }
         <CardFooter className="text-small justify-between flex-col items-start gap-2 p-4">
           <div className="w-full flex justify-between items-start">
              <b className="text-lg text-white">{title}</b>
-             <p className="text-default-500 text-lg font-semibold">${price}</p>
+             <p className="text-default-500 text-lg font-semibold">₹{price}</p>
           </div>
           <p className="text-default-400 text-sm line-clamp-2">{description}</p>
           <Button 

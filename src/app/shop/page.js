@@ -14,27 +14,27 @@ const PRODUCTS = [
     price: 15.99,
     rating: 4.8,
     description: "Gentle cleansing with neem and turmeric.",
-    image: "/lipbalm.jpeg",
+    image: "/rosylipbalm.png",
     category: "Skin Care",
     date: "2024-01-10"
   },
   {
     id: 2,
-    title: "Pain Relief Oil",
+    title: "Hibiscus Lip Balm",
     price: 12.50,
     rating: 4.5,
     description: "Sulfate-free formula for healthy hair.",
-    image: "/pain_relief_oil.png",
-    category: "Hair Care",
+    image: "/hibislipbalm.png",
+    category: "Skin Care",
     date: "2024-01-12"
   },
   {
     id: 3,
-    title: "Aloe Vera Gel",
+    title: "Berry Lip Balm",
     price: 8.99,
     rating: 4.9,
     description: "Pure soothing gel for skin and hair.",
-    image: "/aloe_vera_gel.png",
+    image: "/berrylipbalm.png",
     category: "Skin Care",
     date: "2024-01-15"
   },
