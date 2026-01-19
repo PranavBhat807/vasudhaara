@@ -13,6 +13,7 @@ import {
   NavbarMenuItem
 } from "@nextui-org/react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -39,7 +40,9 @@ export default function Header() {
             className="flex items-center gap-3"
           >
             {/* Placeholder for Logo Image */}
-            <div className="w-8 h-8 bg-gradient-to-tr from-pink-500 to-yellow-500 rounded-full animate-pulse"></div>
+            <div className="w-8 h-8  rounded-full">
+              <Image alt="Logp" src="/logo.png" width={100} height={100}></Image>
+            </div>
             <p className="font-bold text-inherit text-xl tracking-wide bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent">VASUDHARA</p>
           </motion.div>
         </NavbarBrand>
