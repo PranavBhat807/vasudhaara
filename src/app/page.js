@@ -23,7 +23,11 @@ export default function Home() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((item, index) => (
+            {[
+              { name: "LipBalm Collection", image: "/hibisbalm2.png" },
+              { name: "Oil Collection", image: "/kanakaoil.png" },
+              { name: "Crack Heal Collection", image: "/reset2.png" }
+            ].map((collection, index) => (
                 <motion.div 
                     key={index}
                     initial={{ opacity: 0, y: 30 }}
@@ -34,12 +38,12 @@ export default function Home() {
                     <Card isPressable className="h-[400px] w-full bg-neutral-900 border border-white/5 group">
                       <Image 
                         removeWrapper
-                        alt="Collection background"
+                        alt={`${collection.name} background`}
                         className="z-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500 group-hover:scale-110"
-                        src={`https://nextui.org/images/card-example-${index + 1}.jpeg`}
+                        src={collection.image}
                       />
                       <CardBody className="absolute bottom-0 z-10 p-8 flex-col items-start bg-gradient-to-t from-black/90 to-transparent w-full">
-                         <h3 className="text-2xl font-bold text-white mb-2">Collection {item}</h3>
+                         <h3 className="text-2xl font-bold text-white mb-2">{collection.name}</h3>
                          <Button size="sm" color="primary" variant="flat">Shop Now</Button>
                       </CardBody>
                     </Card>
