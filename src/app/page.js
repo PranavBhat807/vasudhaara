@@ -3,6 +3,7 @@
 import Hero from "@/components/Hero/Hero";
 import { Button, Image, Card, CardBody } from "@nextui-org/react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -26,7 +27,7 @@ export default function Home() {
             {[
               { name: "LipBalm Collection", image: "/hibisbalm2.png" },
               { name: "Oil Collection", image: "/kanakaoil.png" },
-              { name: "Crack Heal Collection", image: "/reset2.png" }
+              { name: "Crack Heel Collection", image: "/reset2.png" }
             ].map((collection, index) => (
                 <motion.div 
                     key={index}
@@ -44,7 +45,9 @@ export default function Home() {
                       />
                       <CardBody className="absolute bottom-0 z-10 p-8 flex-col items-start bg-gradient-to-t from-black/90 to-transparent w-full">
                          <h3 className="text-2xl font-bold text-white mb-2">{collection.name}</h3>
-                         <Button size="sm" color="primary" variant="flat">Shop Now</Button>
+                         <Link href="/shop">
+                          <Button size="sm" color="primary" variant="flat">Shop Now</Button>
+                         </Link>
                       </CardBody>
                     </Card>
                 </motion.div>
