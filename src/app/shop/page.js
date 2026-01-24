@@ -3,8 +3,9 @@
 
 import React, { useState, useMemo } from "react";
 import ProductCard from "@/components/ProductCard/ProductCard";
+import ProductDetailsModal from "@/components/ProductDetailsModal/ProductDetailsModal";
 import { Input, Select, SelectItem } from "@nextui-org/react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 // Mock Data
 const PRODUCTS = [
@@ -14,8 +15,18 @@ const PRODUCTS = [
     price: 199,
     rating: 4.8,
     description: "Gentle Hydration with Natural Glow",
-    image: "/rosebalm2.png",
-    images: ["/rosebalm2.png", "/rosylipbalm.png"],
+    longDescription: "Our Rose Lip Balm is crafted with the essence of fresh roses and a blend of ultra-nourishing oils. It not only moisturizes but also imparts a subtle, natural pink tint to your lips, keeping them soft and petal-smooth all day long.",
+    ingredients: "Rose extract, rose oil, beeswax, organic shea butter, sweet almond oil, jojoba oil, vitamin E, and natural plant waxes.",
+    benefits: [
+      "Instantly softens rough lips",
+      "Adds a natural rosy tint",
+      "Hydrates for up to 12 hours",
+      "Soothes irritation and dryness",
+      "Rich in antioxidants for healthy lips",
+      "Free from synthetic fragrances and preservatives"
+    ],
+    image: "/rosebalm3.png",
+    images: ["/rosebalm3.png", "/rosylipbalm.png"],
     category: "Skin Care",
     date: "2024-01-10"
   },
@@ -25,6 +36,16 @@ const PRODUCTS = [
     price: 199,
     rating: 4.5,
     description: "Repair & Restore Naturally",
+    longDescription: "Enriched with the goodness of hibiscus, this lip balm is a miracle worker for pigmented and sun-damaged lips. It naturally exfoliates and rejuvenates, revealing softer, brighter, and healthier-looking lips.",
+    ingredients: "Hibiscus flower extract, coconut oil, beeswax, cocoa butter, vitamin E, castor oil, and organic honey.",
+    benefits: [
+      "Helps lighten dark lips",
+      "Provides intense moisture",
+      "Natural exfoliation for smoother texture",
+      "Protects against UV damage",
+      "Restores natural lip color",
+      "100% natural and safe for daily use"
+    ],
     image: "/hibisbalm2.png",
     images: ["/hibisbalm2.png", "/hibislipbalm.png"],
     category: "Skin Care",
@@ -36,6 +57,16 @@ const PRODUCTS = [
     price: 199,
     rating: 4.9,
     description: "Natural Care for Soft & Healthy Lips",
+    longDescription: "Our Strawberry Lip Balm is made with a rich blend of organic and natural ingredients that deeply nourish dry and chapped lips. Infused with strawberry extract, it helps restore natural lip softness while giving a mild fruity aroma.",
+    ingredients: "Strawberry extract, castor oil, beeswax, shea butter, coconut oil, vitamin E, almond oil, cocoa butter, and natural plant waxes.",
+    benefits: [
+      "Deeply moisturizes dry and cracked lips",
+      "Provides long-lasting hydration",
+      "Helps reduce lip pigmentation with regular use",
+      "Protects lips from environmental damage",
+      "Leaves lips soft, smooth, and naturally glossy",
+      "Free from parabens, artificial colors, and chemicals"
+    ],
     image: "/berrybalm2.png",
     images: ["/berrybalm2.png", "/berrylipbalm.png"],
     category: "Skin Care",
@@ -47,6 +78,16 @@ const PRODUCTS = [
     price: 199,
     rating: 4.7,
     description: "Heals your heel in seconds.",
+     longDescription: "Say goodbye to cracked heels with our advanced RESET formula. Penetrating deep into the skin layers, it repairs fissures, softens hard skin, and provides a protective barrier against further damage.",
+    ingredients: "Urea, salicylic acid, shea butter, peppermint oil, tea tree oil, aloe vera gel, and vitamin E.",
+    benefits: [
+      "Visible results in just 3 days",
+      "Soothes painful cracks immediately",
+      "Softens hard calluses",
+      "Antimicrobial properties prevent infection",
+      "Non-greasy and fast-absorbing",
+      "Suitable for diabetic foot care"
+    ],
     image: "/reset.png",
     images: ["/reset2.png", "/reset.png"],
     category: "Skin Care",
@@ -58,6 +99,16 @@ const PRODUCTS = [
     price: 499,
     rating: 4.6,
     description: "Advanced Herbal Face Mark Remover",
+    longDescription: "Kanaka Taila is a traditional Ayurvedic formulation known for its complexion-enhancing properties. It effectively reduces scars, dark spots, and blemishes, giving you a radiant and even skin tone.",
+    ingredients: "Sesame oil, licorice, manjistha, red sandalwood, saffron, and lotus extracts.",
+    benefits: [
+      "Fades scars and blemishes",
+      "Improves skin texture and tone",
+      "Reduces dark circles",
+      "Adds a natural golden glow",
+      "100% Ayurvedic and chemical-free",
+      "Suitable for all skin types"
+    ],
     image: "/kanakaoil.png",
     images: ["/kanakaoil.png", "/kanakaoil2.png"],
     category: "Hair Care",
@@ -65,11 +116,21 @@ const PRODUCTS = [
   },
   {
     id: 6,
-    title: "Herbal Soap",
-    price: 5.99,
+    title: "Bringhraj Hair Oil",
+    price: 349,
     rating: 4.3,
-    description: "Handmade soap with essential oils.",
-    image: "/herbal_soap.png",
+    description: "Oil just four your scalp",
+    longDescription: "Unlock stronger, healthier hair with the ancient power of Bhringraj 🌿     Infused with nature’s most trusted hair-revitalizing herb, this nourishing oil deeply strengthens roots, boosts natural hair growth, and helps reduce hair fall from the very first use. Regular application works to slow premature graying, restore shine, and revive dull, lifeless hair—leaving it thicker, smoother, and visibly healthier. Perfect for daily care and suitable for all hair types, this is your go-to solution for naturally beautiful, resilient hair.",
+    ingredients: "Bringhraj extract, coconut oil, amla, sesame oil, hibiscus, and brahmi.",
+    benefits: [
+      "Promotes faster hair growth",
+      "Reduces hair fall significantly",
+      "Prevents premature graying",
+      "Cools the scalp and reduces stress",
+      "Eliminates dandruff",
+      "Makes hair thick, shiny, and strong"
+    ],
+    image: "/Bringhraj_hair_oil1.png",
     category: "Bath & Body",
     date: "2024-01-22"
   },
@@ -78,6 +139,7 @@ const PRODUCTS = [
 export default function ShopPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("all");
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   const filteredProducts = useMemo(() => {
     return PRODUCTS.filter((product) => {
@@ -114,7 +176,8 @@ export default function ShopPage() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.3, delay: index * 0.05 }}
-                    className="h-[400px]"
+                    className="h-[400px] cursor-pointer"
+                    onClick={() => setSelectedProduct(product)}
                 >
                     <ProductCard {...product} />
                 </motion.div>
@@ -125,6 +188,12 @@ export default function ShopPage() {
             <p className="text-xl">No products found matching your search.</p>
         </div>
       )}
+
+      <ProductDetailsModal 
+        isOpen={!!selectedProduct} 
+        onClose={() => setSelectedProduct(null)} 
+        product={selectedProduct} 
+      />
     </div>
   );
 }
