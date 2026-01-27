@@ -1,12 +1,22 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button, Chip } from "@nextui-org/react";
 import Image from "next/image";
+import { useCart } from "@/context/CartContext";
 
 export default function ProductDetailsModal({ isOpen, onClose, product }) {
+  const { addToCart } = useCart();
+  const [isAdded, setIsAdded] = useState(false);
+
   if (!isOpen || !product) return null;
+
+  const handleAddToCart = () => {
+    addToCart(product);
+    setIsAdded(true);
+    setTimeout(() => setIsAdded(false), 2000);
+  };
 
   return (
     <AnimatePresence>
@@ -91,8 +101,13 @@ export default function ProductDetailsModal({ isOpen, onClose, product }) {
               </div>
 
               <div className="mt-8 flex gap-4">
-                <Button color="primary" size="lg" className="flex-1 font-semibold shadow-lg shadow-primary/30">
-                    Add to Cart
+                <Button 
+                    color={isAdded ? "success" : "primary"} 
+                    size="lg" 
+                    className="flex-1 font-semibold shadow-lg shadow-primary/30"
+                    onClick={handleAddToCart}
+                >
+                    {isAdded ? "Added to Cart" : "Add to Cart"}
                 </Button>
                 <Button variant="bordered" size="lg" className="flex-1 font-semibold">
                     Buy Now

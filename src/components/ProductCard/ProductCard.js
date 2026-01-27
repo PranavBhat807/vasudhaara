@@ -3,10 +3,13 @@
 import React, { useState } from "react";
 import { Card, CardBody, CardFooter, Image, Button } from "@nextui-org/react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useCart } from "@/context/CartContext";
 
-export default function ProductCard({ title, price, description, image, images, rating }) {
+export default function ProductCard({ title, price, description, image, images, rating, id }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [direction, setDirection] = useState(0);
+  const { addToCart } = useCart();
+  const [isAdded, setIsAdded] = useState(false);
 
   const imageList = images && images.length > 0 ? images : [image]; // fallback
   const hasMultipleImages = imageList.length > 1;
@@ -31,6 +34,14 @@ export default function ProductCard({ title, price, description, image, images, 
     e.stopPropagation();
     e.preventDefault();
     paginate(-1);
+  };
+
+  const handleAddToCart = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    addToCart({ id, title, price, image });
+    setIsAdded(true);
+    setTimeout(() => setIsAdded(false), 2000);
   };
 
   const variants = {
@@ -131,11 +142,12 @@ export default function ProductCard({ title, price, description, image, images, 
           </div>
           <p className="text-default-400 text-sm line-clamp-2">{description}</p>
           <Button 
-            className="w-full mt-2 bg-gradient-to-r from-pink-500 to-yellow-500 text-white font-semibold shadow-lg"
+            className={`w-full mt-2 font-semibold shadow-lg transition-all ${isAdded ? "bg-green-500 text-white" : "bg-gradient-to-r from-pink-500 to-yellow-500 text-white"}`}
             radius="full"
             size="sm"
+            onClick={handleAddToCart}
           >
-            Add to Cart
+            {isAdded ? "Added to Cart" : "Add to Cart"}
           </Button>
         </CardFooter>
       </Card>
