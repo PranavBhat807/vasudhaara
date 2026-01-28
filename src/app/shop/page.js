@@ -30,6 +30,7 @@ const PRODUCTS = [
     category: "Skin Care",
     date: "2024-01-10"
   },
+  
   {
     id: 2,
     title: "Hibiscus Lip Balm",
@@ -102,12 +103,12 @@ const PRODUCTS = [
     longDescription: "Kanaka Taila is a traditional Ayurvedic formulation known for its complexion-enhancing properties. It effectively reduces scars, dark spots, and blemishes, giving you a radiant and even skin tone.",
     ingredients: "Sesame oil, licorice, manjistha, red sandalwood, saffron, and lotus extracts.",
     benefits: [
-      "Fades scars and blemishes",
-      "Improves skin texture and tone",
-      "Reduces dark circles",
-      "Adds a natural golden glow",
+      "Helps reduce wrinkles and improves skin textures",
+      "Soothes burnt areas and reduces burning sensations",
+      "Helps stop bleeding from minor cut",
+      "Aids in faster wound healing",
       "100% Ayurvedic and chemical-free",
-      "Suitable for all skin types"
+      "Helps reduce open pores and improves skin appearances"
     ],
     image: "/kanakaoil.png",
     images: ["/kanakaoil.png", "/kanakaoil2.png"],
@@ -134,6 +135,48 @@ const PRODUCTS = [
     category: "Bath & Body",
     date: "2024-01-22"
   },
+  {
+    id: 7,
+    title: "Rose Lip Balm(10 pcs)",
+    price: 1800,
+    rating: 4.8,
+    description: "Gentle Hydration with Natural Glow",
+    longDescription: "Our Rose Lip Balm is crafted with the essence of fresh roses and a blend of ultra-nourishing oils. It not only moisturizes but also imparts a subtle, natural pink tint to your lips, keeping them soft and petal-smooth all day long.",
+    ingredients: "Rose extract, rose oil, beeswax, organic shea butter, sweet almond oil, jojoba oil, vitamin E, and natural plant waxes.",
+    benefits: [
+      "Instantly softens rough lips",
+      "Adds a natural rosy tint",
+      "Hydrates for up to 12 hours",
+      "Soothes irritation and dryness",
+      "Rich in antioxidants for healthy lips",
+      "Free from synthetic fragrances and preservatives"
+    ],
+    image: "/set_of_10.png",
+    images: ["/rosebalm3.png", "/set_of_10.png"],
+    category: "Skin Care",
+    date: "2024-01-10"
+  },
+  {
+    id: 8,
+    title: "Kids Rose Lip Balm",
+    price: 180,
+    rating: 4.8,
+    description: "Gentle Hydration with Natural Glow",
+    longDescription: "Our Rose Lip Balm is crafted with the essence of fresh roses and a blend of ultra-nourishing oils. It not only moisturizes but also imparts a subtle, natural pink tint to your lips, keeping them soft and petal-smooth all day long.",
+    ingredients: "Rose extract, rose oil, beeswax, organic shea butter, sweet almond oil, jojoba oil, vitamin E, and natural plant waxes.",
+    benefits: [
+      "Instantly softens rough lips",
+      "Adds a natural rosy tint",
+      "Hydrates for up to 12 hours",
+      "Soothes irritation and dryness",
+      "Rich in antioxidants for healthy lips",
+      "Free from synthetic fragrances and preservatives"
+    ],
+    image: "/kids.png",
+    images: ["/kids.png", "/rosebalm3.png"],
+    category: "Skin Care",
+    date: "2024-01-10"
+  }
 ];
 
 export default function ShopPage() {

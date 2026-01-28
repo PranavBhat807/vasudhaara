@@ -16,13 +16,13 @@ export default function AboutPage() {
         
         <div className="prose prose-invert prose-lg max-w-none text-neutral-300 space-y-6">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Vasudhaara was created from the need for care that families can truly trust. We believe what touches your skin should be as safe and comforting as care made at home.
           </p>
           <p>
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Gently crafted with natural ingredients, our products are designed for every age from little hands to elderly days. We avoid harsh chemicals and shortcuts, focusing instead on honest, thoughtful formulations inspired by traditional care and everyday family rituals.
           </p>
           <p>
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
+            Made with patience, love, and responsibility, Vasudhaara brings comfort, safety, and nature back into daily life.
           </p>
         </div>
 
