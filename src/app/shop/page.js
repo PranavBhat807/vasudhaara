@@ -151,8 +151,8 @@ const PRODUCTS = [
       "Rich in antioxidants for healthy lips",
       "Free from synthetic fragrances and preservatives"
     ],
-    image: "/set_of_10.png",
-    images: ["/rosebalm3.png", "/set_of_10.png"],
+    image: "/Set_of_10.png",
+    images: ["/Set_of_10.png","/rosebalm3.png"],
     category: "Skin Care",
     date: "2024-01-10"
   },
@@ -172,8 +172,8 @@ const PRODUCTS = [
       "Rich in antioxidants for healthy lips",
       "Free from synthetic fragrances and preservatives"
     ],
-    image: "/kids.png",
-    images: ["/kids.png", "/rosebalm3.png"],
+    image: "/Kids.png",
+    images: ["/Kids.png", "/rosebalm3.png"],
     category: "Skin Care",
     date: "2024-01-10"
   }
