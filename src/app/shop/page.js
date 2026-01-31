@@ -16,7 +16,7 @@ const PRODUCTS = [
     rating: 4.8,
     description: "Gentle Hydration with Natural Glow",
     longDescription: "Our Rose Lip Balm is crafted with the essence of fresh roses and a blend of ultra-nourishing oils. It not only moisturizes but also imparts a subtle, natural pink tint to your lips, keeping them soft and petal-smooth all day long.",
-    ingredients: "Rose extract, rose oil, beeswax, organic shea butter, sweet almond oil, jojoba oil, vitamin E, and natural plant waxes.",
+    ingredients: "Rose extract, rose oil, beeswax, organic shea butter, sweet almond oil, badam oil, vitamin E, and natural plant waxes.",
     benefits: [
       "Instantly softens rough lips",
       "Adds a natural rosy tint",
@@ -80,7 +80,7 @@ const PRODUCTS = [
     rating: 4.7,
     description: "Heals your heel in seconds.",
      longDescription: "Say goodbye to cracked heels with our advanced RESET formula. Penetrating deep into the skin layers, it repairs fissures, softens hard skin, and provides a protective barrier against further damage.",
-    ingredients: "Urea, salicylic acid, shea butter, peppermint oil, tea tree oil, aloe vera gel, and vitamin E.",
+    ingredients: "Shea butter, peppermint oil, tea tree oil, aloe vera gel, and vitamin E, cocoa butter, mimosa pudica,coconut oil, olive oil, neem .",
     benefits: [
       "Visible results in just 3 days",
       "Soothes painful cracks immediately",
@@ -101,13 +101,13 @@ const PRODUCTS = [
     rating: 4.6,
     description: "Advanced Herbal Face Mark Remover",
     longDescription: "Kanaka Taila is a traditional Ayurvedic formulation known for its complexion-enhancing properties. It effectively reduces scars, dark spots, and blemishes, giving you a radiant and even skin tone.",
-    ingredients: "Sesame oil, licorice, manjistha, red sandalwood, saffron, and lotus extracts.",
+    ingredients: "Sesame oil, licorice, manjistha, red sandalwood, saffron, and lotus extracts, almond oil, coconut oil, nutmeg.",
     benefits: [
       "Helps reduce wrinkles and improves skin textures",
       "Soothes burnt areas and reduces burning sensations",
       "Helps stop bleeding from minor cut",
       "Aids in faster wound healing",
-      "100% Ayurvedic and chemical-free",
+      "100% Hand made and chemical-free",
       "Helps reduce open pores and improves skin appearances"
     ],
     image: "/kanakaoil.png",
@@ -163,7 +163,7 @@ const PRODUCTS = [
     rating: 4.8,
     description: "Gentle Hydration with Natural Glow",
     longDescription: "Our Rose Lip Balm is crafted with the essence of fresh roses and a blend of ultra-nourishing oils. It not only moisturizes but also imparts a subtle, natural pink tint to your lips, keeping them soft and petal-smooth all day long.",
-    ingredients: "Rose extract, rose oil, beeswax, organic shea butter, sweet almond oil, jojoba oil, vitamin E, and natural plant waxes.",
+    ingredients: "Rose extract, rose oil, beeswax, organic shea butter, sweet almond oil, badam oil, vitamin E, and natural plant waxes.",
     benefits: [
       "Instantly softens rough lips",
       "Adds a natural rosy tint",
