@@ -47,7 +47,7 @@ export default function Header() {
             <div className="w-8 h-8  rounded-full">
               <Image alt="Logp" src="/logo.png" width={100} height={100}></Image>
             </div>
-            <p className="font-bold text-inherit text-xl tracking-wide bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent">VASUDHARA</p>
+            <p className="font-bold text-inherit text-lg sm:text-xl tracking-wide bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent">VASUDHARA</p>
           </motion.div>
         </NavbarBrand>
       </NavbarContent>
@@ -88,7 +88,7 @@ export default function Header() {
             </div>
           </Link>
         </NavbarItem>
-        <NavbarItem>
+        <NavbarItem className="hidden sm:flex">
           <Button as={Link} color="primary" href="/shop" variant="flat" className="font-semibold">
             Shop Now
           </Button>
@@ -97,18 +97,13 @@ export default function Header() {
 
       <NavbarMenu>
         {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item.label}-${index}`}>
+          <NavbarMenuItem key={`${item.label}-${index}`} className="py-2">
             <Link
-              color={
-                index === 2
-                  ? "primary"
-                  : index === menuItems.length - 1
-                    ? "danger"
-                    : "foreground"
-              }
-              className="w-full"
+              color="foreground"
+              className="w-full text-2xl font-bold"
               href={item.href}
               size="lg"
+              onClick={() => setIsMenuOpen(false)}
             >
               {item.label}
             </Link>
