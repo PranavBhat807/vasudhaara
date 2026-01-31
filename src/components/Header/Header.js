@@ -102,7 +102,7 @@ export default function Header() {
                 index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
               }
               className="w-full"
-              href={item === "Home" ? "/" : `/${item.toLowerCase().replace(" ", "-")}`}
+              href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
               size="lg"
             >
               {item}
