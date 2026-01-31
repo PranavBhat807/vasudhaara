@@ -2,11 +2,11 @@
 
 import React from "react";
 import {
-  Navbar, 
-  NavbarBrand, 
-  NavbarContent, 
-  NavbarItem, 
-  Link, 
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  Link,
   Button,
   NavbarMenuToggle,
   NavbarMenu,
@@ -22,11 +22,12 @@ export default function Header() {
   const cartCount = getCartCount();
 
   const menuItems = [
-    "Home",
-    "About Us",
-    "Contact Us",
-    "Shop",
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "/about" },
+    { label: "Contact Us", href: "/contact" },
+    { label: "Shop", href: "/shop" },
   ];
+
 
   return (
     <Navbar onMenuOpenChange={setIsMenuOpen} className="bg-background/70 backdrop-blur-lg border-b border-divider">
@@ -36,7 +37,7 @@ export default function Header() {
           className="sm:hidden"
         />
         <NavbarBrand>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
@@ -76,16 +77,16 @@ export default function Header() {
 
       <NavbarContent justify="end">
         <NavbarItem>
-            <Link href="/checkout" className="mr-4">
-                <div className="relative">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-                    {cartCount > 0 && (
-                        <div className="absolute -top-2 -right-2 bg-pink-500 text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full font-bold">
-                            {cartCount}
-                        </div>
-                    )}
+          <Link href="/checkout" className="mr-4">
+            <div className="relative">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="8" cy="21" r="1" /><circle cx="19" cy="21" r="1" /><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" /></svg>
+              {cartCount > 0 && (
+                <div className="absolute -top-2 -right-2 bg-pink-500 text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full font-bold">
+                  {cartCount}
                 </div>
-            </Link>
+              )}
+            </div>
+          </Link>
         </NavbarItem>
         <NavbarItem>
           <Button as={Link} color="primary" href="/shop" variant="flat" className="font-semibold">
@@ -96,20 +97,25 @@ export default function Header() {
 
       <NavbarMenu>
         {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
+          <NavbarMenuItem key={`${item.label}-${index}`}>
             <Link
               color={
-                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
+                index === 2
+                  ? "primary"
+                  : index === menuItems.length - 1
+                    ? "danger"
+                    : "foreground"
               }
               className="w-full"
-              href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+              href={item.href}
               size="lg"
             >
-              {item}
+              {item.label}
             </Link>
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
+
     </Navbar>
   );
 }
