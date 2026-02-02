@@ -30,7 +30,7 @@ const PRODUCTS = [
     category: "Skin Care",
     date: "2024-01-10"
   },
-  
+
   {
     id: 2,
     title: "Hibiscus Lip Balm",
@@ -79,7 +79,7 @@ const PRODUCTS = [
     price: 199,
     rating: 4.7,
     description: "Heals your heel in seconds.",
-     longDescription: "Say goodbye to cracked heels with our advanced RESET formula. Penetrating deep into the skin layers, it repairs fissures, softens hard skin, and provides a protective barrier against further damage.",
+    longDescription: "Say goodbye to cracked heels with our advanced RESET formula. Penetrating deep into the skin layers, it repairs fissures, softens hard skin, and provides a protective barrier against further damage.",
     ingredients: "Shea butter, peppermint oil, tea tree oil, aloe vera gel, and vitamin E, cocoa butter, mimosa pudica,coconut oil, olive oil, neem .",
     benefits: [
       "Visible results in just 3 days",
@@ -110,6 +110,8 @@ const PRODUCTS = [
       "100% Hand made and chemical-free",
       "Helps reduce open pores and improves skin appearances"
     ],
+    note: "Before first use, perform a patch test by applying a small amount of Kanaka Taila on the inner forearm or behind the ear. Wait for 24 hours to check for any irritation, redness, or allergic reaction. If no discomfort occurs, it is safe to use.",
+    howToApply: "Clean the face,neck and pat it dry. Take 2–3 drops of Kanaka Taila and gently massage on the skin. Leave it on for 30–60 minutes or overnight if suitable. Wash off with mild cleanser. Use regularly for best results",
     image: "/kanakaoil.png",
     images: ["/kanakaoil.png", "/kanakaoil2.png"],
     category: "Hair Care",
@@ -152,7 +154,7 @@ const PRODUCTS = [
       "Free from synthetic fragrances and preservatives"
     ],
     image: "/Set_of_10.png",
-    images: ["/Set_of_10.png","/rosebalm3.png"],
+    images: ["/Set_of_10.png", "/rosebalm3.png"],
     category: "Skin Care",
     date: "2024-01-10"
   },
@@ -196,46 +198,46 @@ export default function ShopPage() {
     <div className="min-h-screen pt-12 px-6 max-w-7xl mx-auto">
       <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
         <div className="space-y-2">
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent">Shop Our Collection</h1>
-            <p className="text-neutral-400">Discover nature's best secrets.</p>
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent">Shop Our Collection</h1>
+          <p className="text-neutral-400">Discover nature's best secrets.</p>
         </div>
-        
+
         <div className="flex gap-4 w-full md:w-auto">
-            <Input 
-                placeholder="Search products..." 
-                value={searchQuery}
-                onValueChange={setSearchQuery}
-                className="w-full md:w-64"
-                variant="bordered"
-            />
+          <Input
+            placeholder="Search products..."
+            value={searchQuery}
+            onValueChange={setSearchQuery}
+            className="w-full md:w-64"
+            variant="bordered"
+          />
         </div>
       </div>
 
       {filteredProducts.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {filteredProducts.map((product, index) => (
-                <motion.div
-                    key={product.id}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
-                    className="h-[400px] cursor-pointer"
-                    onClick={() => setSelectedProduct(product)}
-                >
-                    <ProductCard {...product} />
-                </motion.div>
-            ))}
+          {filteredProducts.map((product, index) => (
+            <motion.div
+              key={product.id}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
+              className="h-[400px] cursor-pointer"
+              onClick={() => setSelectedProduct(product)}
+            >
+              <ProductCard {...product} />
+            </motion.div>
+          ))}
         </div>
       ) : (
         <div className="text-center py-20 text-neutral-500">
-            <p className="text-xl">No products found matching your search.</p>
+          <p className="text-xl">No products found matching your search.</p>
         </div>
       )}
 
-      <ProductDetailsModal 
-        isOpen={!!selectedProduct} 
-        onClose={() => setSelectedProduct(null)} 
-        product={selectedProduct} 
+      <ProductDetailsModal
+        isOpen={!!selectedProduct}
+        onClose={() => setSelectedProduct(null)}
+        product={selectedProduct}
       />
     </div>
   );
