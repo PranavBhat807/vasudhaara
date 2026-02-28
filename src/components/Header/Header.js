@@ -12,7 +12,6 @@ import {
   NavbarMenu,
   NavbarMenuItem
 } from "@nextui-org/react";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { useCart } from "@/context/CartContext";
 
@@ -37,18 +36,15 @@ export default function Header() {
           className="sm:hidden"
         />
         <NavbarBrand>
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="flex items-center gap-3"
+          <div
+            className="flex items-center gap-3 animate-fade-in-left opacity-0"
           >
             {/* Placeholder for Logo Image */}
-            <div className="w-8 h-8  rounded-full">
-              <Image alt="Logp" src="/logo.png" width={100} height={100}></Image>
+            <div className="w-8 h-8 rounded-full overflow-hidden relative">
+              <Image alt="Vasudhara Logo" src="/logo.png" width={100} height={100} className="object-cover w-full h-full" priority={true} />
             </div>
             <p className="font-bold text-inherit text-lg sm:text-xl tracking-wide bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent">VASUDHARA</p>
-          </motion.div>
+          </div>
         </NavbarBrand>
       </NavbarContent>
 
