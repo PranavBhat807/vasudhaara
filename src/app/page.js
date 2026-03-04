@@ -21,9 +21,9 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { name: "LipBalm Collection", image: "/hibisbalm2.png" },
-            { name: "Oil Collection", image: "/kanakaoil.png" },
-            { name: "Crack Heel Collection", image: "/reset2.png" }
+            { id: "LipBalm", name: "LipBalm Collection", image: "/hibisbalm2.png" },
+            { id: "Oil", name: "Oil Collection", image: "/kanakaoil.png" },
+            { id: "CrackHeel", name: "Crack Heel Collection", image: "/reset2.png" }
           ].map((collection, index) => (
             <div
               key={index}
@@ -41,7 +41,7 @@ export default function Home() {
                 />
                 <CardBody className="absolute bottom-0 z-10 p-8 flex-col items-start bg-gradient-to-t from-black/90 to-transparent w-full">
                   <h3 className="text-2xl font-bold text-white mb-2">{collection.name}</h3>
-                  <Button as={Link} href="/shop" size="sm" color="primary" variant="flat">Shop Now</Button>
+                  <Button as={Link} href={`/shop?collection=${collection.id}`} size="sm" color="primary" variant="flat">Shop Now</Button>
                 </CardBody>
               </Card>
             </div>

@@ -6,3 +6,4 @@ Add to Cart button is available but not functional
 Seaarch bar is done
 Featured collections working
 DB Integration not done
+Performance Optimiztion done

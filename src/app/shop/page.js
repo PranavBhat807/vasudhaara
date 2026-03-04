@@ -1,7 +1,8 @@
 
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import ProductCard from "@/components/ProductCard/ProductCard";
 import ProductDetailsModal from "@/components/ProductDetailsModal/ProductDetailsModal";
 import { Input, Select, SelectItem } from "@nextui-org/react";
@@ -181,7 +182,10 @@ const PRODUCTS = [
   }
 ];
 
-export default function ShopPage() {
+function ShopContent() {
+  const searchParams = useSearchParams();
+  const collectionQuery = searchParams.get("collection");
+
   const [searchQuery, setSearchQuery] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -190,9 +194,17 @@ export default function ShopPage() {
     return PRODUCTS.filter((product) => {
       const matchesSearch = product.title.toLowerCase().includes(searchQuery.toLowerCase());
       const matchesCategory = categoryFilter === "all" || product.category === categoryFilter;
-      return matchesSearch && matchesCategory;
+
+      let productCollection = "Other";
+      if (product.title.toLowerCase().includes("lip balm")) productCollection = "LipBalm";
+      else if (product.title.toLowerCase().includes("oil") || product.title.toLowerCase().includes("taila")) productCollection = "Oil";
+      else if (product.title.toLowerCase().includes("heel")) productCollection = "CrackHeel";
+
+      const matchesCollection = !collectionQuery || productCollection === collectionQuery;
+
+      return matchesSearch && matchesCategory && matchesCollection;
     });
-  }, [searchQuery, categoryFilter]);
+  }, [searchQuery, categoryFilter, collectionQuery]);
 
   return (
     <div className="min-h-screen pt-12 px-6 max-w-7xl mx-auto">
@@ -240,5 +252,13 @@ export default function ShopPage() {
         product={selectedProduct}
       />
     </div>
+  );
+}
+
+export default function ShopPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center pt-12 text-neutral-400">Loading shop...</div>}>
+      <ShopContent />
+    </Suspense>
   );
 }
