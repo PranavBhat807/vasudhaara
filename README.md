@@ -7,3 +7,4 @@ Seaarch bar is done
 Featured collections working
 DB Integration not done
 Performance Optimiztion done
+Collections done for functionality
