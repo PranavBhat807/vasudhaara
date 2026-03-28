@@ -16,12 +16,12 @@ export default function ContactPage() {
         <div className="space-y-6">
             <h1 className="text-5xl font-bold bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent">Contact Us</h1>
             <p className="text-neutral-300 text-lg">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. We'd love to hear from you.
+                 We'd love to hear from you.
             </p>
             <div className="space-y-4 text-neutral-400">
-                <p>📍 123 Herbal Lane, Green City</p>
-                <p>📞 +1 234 567 890</p>
-                <p>✉️ support@vasudhara.com</p>
+                <p>📍 Prabhatnagar, Honnavar, Karnataka-581334</p>
+                <p>📞 +91 78920 86973</p>
+                <p>✉️ vandana.bhat0131@gmail.com</p>
             </div>
         </div>
 
