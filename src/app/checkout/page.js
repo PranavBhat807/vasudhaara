@@ -1,14 +1,63 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { useCart } from "@/context/CartContext";
-import { Button, Image, Card, CardBody, Divider } from "@nextui-org/react";
+import { Button, Image, Card, CardBody, Divider, Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure, Input } from "@nextui-org/react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function CheckoutPage() {
   const { cartItems, removeFromCart, updateQuantity, getCartTotal, clearCart } = useCart();
   const total = getCartTotal();
+  const {isOpen, onOpen, onOpenChange} = useDisclosure();
+  const [isOrderPlaced, setIsOrderPlaced] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+    city: "",
+    state: "",
+    zip: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handlePlaceOrder = (onClose) => {
+    // Basic validation
+    if (!formData.name || !formData.phone || !formData.address || !formData.city || !formData.zip) {
+        alert("Please fill in all the required delivery details.");
+        return;
+    }
+    setIsOrderPlaced(true);
+    clearCart();
+    onClose();
+  };
+
+  if (isOrderPlaced) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center p-6 text-center">
+        <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+        >
+            <div className="text-6xl mb-4">🎉</div>
+            <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent">Order Confirmed!</h1>
+            <p className="text-neutral-300 text-lg mb-2">Thank you, {formData.name}!</p>
+            <p className="text-neutral-400 mb-8">Your order will be shipped to {formData.address}, {formData.city}.</p>
+            <Link href="/shop">
+            <Button color="primary" size="lg" variant="shadow" className="font-semibold">
+                Continue Shopping
+            </Button>
+            </Link>
+        </motion.div>
+      </div>
+    );
+  }
 
   if (cartItems.length === 0) {
     return (
@@ -134,6 +183,7 @@ export default function CheckoutPage() {
                         color="primary" 
                         size="lg" 
                         className="w-full font-bold shadow-lg shadow-primary/20"
+                        onPress={onOpen}
                     >
                         Proceed to Checkout
                     </Button>
@@ -144,6 +194,114 @@ export default function CheckoutPage() {
             </Card>
         </div>
       </div>
+
+      {/* Checkout Form Modal */}
+      <Modal 
+        isOpen={isOpen} 
+        onOpenChange={onOpenChange}
+        placement="top-center"
+        backdrop="blur"
+        scrollBehavior="inside"
+      >
+        <ModalContent className="bg-neutral-900 border border-white/10">
+          {(onClose) => (
+            <>
+              <ModalHeader className="flex flex-col gap-1 text-2xl font-bold bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent">
+                Delivery Details
+              </ModalHeader>
+              <ModalBody>
+                <p className="text-sm text-neutral-400 mb-4">
+                  Please provide your accurate details so we can deliver your items safely.
+                </p>
+                <div className="space-y-4">
+                  <Input
+                    autoFocus
+                    autoComplete="name"
+                    isRequired
+                    label="Full Name"
+                    name="name"
+                    placeholder="Enter your full name"
+                    variant="bordered"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                  />
+                  <Input
+                    label="Email"
+                    autoComplete="email"
+                    name="email"
+                    placeholder="Enter your email address"
+                    type="email"
+                    variant="bordered"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                  />
+                  <Input
+                    isRequired
+                    autoComplete="tel"
+                    label="Phone Number"
+                    name="phone"
+                    placeholder="Enter your contact number"
+                    type="tel"
+                    variant="bordered"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                  />
+                  <Input
+                    isRequired
+                    autoComplete="street-address"
+                    label="Shipping Address"
+                    name="address"
+                    placeholder="House No, Street, Landmark"
+                    variant="bordered"
+                    value={formData.address}
+                    onChange={handleInputChange}
+                  />
+                  <div className="grid grid-cols-2 gap-4">
+                    <Input
+                      isRequired
+                      autoComplete="address-level2"
+                      label="City"
+                      name="city"
+                      placeholder="City/Town"
+                      variant="bordered"
+                      value={formData.city}
+                      onChange={handleInputChange}
+                    />
+                    <Input
+                      label="State"
+                      autoComplete="address-level1"
+                      name="state"
+                      placeholder="State/Province"
+                      variant="bordered"
+                      value={formData.state}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                  <Input
+                    isRequired
+                    autoComplete="postal-code"
+                    label="ZIP / Pincode"
+                    name="zip"
+                    placeholder="Postal code"
+                    variant="bordered"
+                    value={formData.zip}
+                    onChange={handleInputChange}
+                  />
+                </div>
+              </ModalBody>
+              <ModalFooter>
+                <Button color="danger" variant="flat" onPress={onClose}>
+                  Cancel
+                </Button>
+                <Button color="primary" onPress={() => handlePlaceOrder(onClose)}>
+                  Place Order
+                </Button>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
+
     </div>
   );
 }
