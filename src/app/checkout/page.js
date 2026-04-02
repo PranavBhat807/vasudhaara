@@ -11,6 +11,7 @@ export default function CheckoutPage() {
   const total = getCartTotal();
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
   const [isOrderPlaced, setIsOrderPlaced] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,15 +27,41 @@ export default function CheckoutPage() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handlePlaceOrder = (onClose) => {
+  const handlePlaceOrder = async (onClose) => {
     // Basic validation
     if (!formData.name || !formData.phone || !formData.address || !formData.city || !formData.zip) {
         alert("Please fill in all the required delivery details.");
         return;
     }
-    setIsOrderPlaced(true);
-    clearCart();
-    onClose();
+    
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('/api/orders', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          formData,
+          cartItems,
+          total
+        }),
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to create order');
+      }
+      
+      setIsOrderPlaced(true);
+      clearCart();
+      onClose();
+    } catch (error) {
+      console.error(error);
+      alert("There was an error placing your order. Please try again or check connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isOrderPlaced) {
@@ -293,7 +320,7 @@ export default function CheckoutPage() {
                 <Button color="danger" variant="flat" onPress={onClose}>
                   Cancel
                 </Button>
-                <Button color="primary" onPress={() => handlePlaceOrder(onClose)}>
+                <Button color="primary" isLoading={isSubmitting} onPress={() => handlePlaceOrder(onClose)}>
                   Place Order
                 </Button>
               </ModalFooter>
