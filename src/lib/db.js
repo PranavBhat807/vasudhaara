@@ -1,14 +1,6 @@
-import { Pool } from '@neondatabase/serverless';
+import { neon } from '@neondatabase/serverless';
 
-let pool;
+// Uses the stateless HTTP connection for Neon, perfectly compatible with Vercel Serverless
+const sql = neon(process.env.DATABASE_URL);
 
-if (!pool) {
-  pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
-    ssl: {
-      rejectUnauthorized: false,
-    },
-  });
-}
-
-export default pool;
+export default sql;

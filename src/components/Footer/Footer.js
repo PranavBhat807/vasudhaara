@@ -30,9 +30,9 @@ export default function Footer() {
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-white">Contact</h3>
           <ul className="space-y-2 text-sm text-neutral-400">
-            <li>Email: support@vasudhara.com</li>
-            <li>Phone: +1 234 567 890</li>
-            <li>Address: 123 Herbal Lane, Green City</li>
+            <li>Email: vandana.bhat0131@gmail.com</li>
+            <li>Phone: +91 78920 86973</li>
+            <li>Address: Prabhatnagar, Honnavar, Karnataka-581334</li>
           </ul>
         </div>
 

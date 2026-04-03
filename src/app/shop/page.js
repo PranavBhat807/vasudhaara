@@ -179,6 +179,26 @@ const PRODUCTS = [
     images: ["/Kids.png", "/rosebalm3.png"],
     category: "Skin Care",
     date: "2024-01-10"
+  },
+  {
+    id: 9,
+    title: "Nail Infection Cure",
+    price: 180,
+    rating: 4.8,
+    description: "Nail Nourishment for You",
+    longDescription: "Our Nail Infection Liquid is formulated with a potent blend of antifungal and antiseptic botanicals. It not only targets the source of nail infections but also helps create a protective barrier, promoting healthier, clearer, and stronger nails with consistent use",
+    ingredients: "Tea tree oil, undecylenic acid, clove oil, lemon grass extract, thyme oil, eucalyptus oil, grapefruit seed extract, and purified herbal base",
+    benefits: [
+      "Instantly softens rough nails",
+      "Adds a natural rosy tint",
+      "Hydrates for up to 12 hours",
+      "Soothes irritation and dryness",
+      "Rich in antioxidants for healthy nails",
+      "Free from synthetic fragrances and preservatives"
+    ],
+    image: "/nail_nourish1.png",
+    category: "Skin Care",
+    date: "2024-01-10"
   }
 ];
 
