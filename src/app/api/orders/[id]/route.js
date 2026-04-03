@@ -7,10 +7,8 @@ export async function PATCH(request, context) {
     const body = await request.json();
     const { status } = body;
 
-    const result = await sql(
-      'UPDATE orders SET status = $1 WHERE id = $2 RETURNING *',
-      [status, id]
-    );
+    const result = await sql`
+      UPDATE orders SET status = ${status} WHERE id = ${id} RETURNING *`;
 
     if (result.length === 0) {
       return NextResponse.json({ error: 'Order not found' }, { status: 404 });
@@ -27,10 +25,8 @@ export async function DELETE(request, context) {
   try {
     const { id } = await context.params;
 
-    const result = await sql(
-      'DELETE FROM orders WHERE id = $1 RETURNING *',
-      [id]
-    );
+    const result = await sql`
+      DELETE FROM orders WHERE id = ${id} RETURNING *`;
 
     if (result.length === 0) {
       return NextResponse.json({ error: 'Order not found' }, { status: 404 });
