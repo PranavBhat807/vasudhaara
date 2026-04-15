@@ -199,6 +199,46 @@ const PRODUCTS = [
     image: "/nail_nourish1.png",
     category: "Skin Care",
     date: "2024-01-10"
+  },
+  {
+    id: 10,
+    title: "Virgin coconut oil ",
+    price: 450,
+    rating: 4.3,
+    description: "Naturally extracted from coconut",
+    longDescription: "Our Virgin Coconut Oil is made from fresh coconuts using a cold-pressed method to retain its natural nutrients and aroma. It deeply nourishes the skin and hair, keeping them soft, smooth, and healthy. Lightweight and easily absorbed, it’s perfect for daily use as a moisturizer or hair care essential.",
+    ingredients: "Coconuts",
+    benefits: [
+      "Deeply moisturizes skin and prevents dryness",
+      "Strengthens hair and reduces hair fall",
+      "Adds natural shine and smoothness to hair",
+      "Helps soothe dry or irritated skin",
+      "Rich in antioxidants that support healthy skin"
+    ],
+    image: "/coconutoil0.png",
+    category: "Hair Care",
+    date: "2026-13-04"
+  },
+  {
+    id: 11,
+    title: "Lip Candle",
+    price: 450,
+    rating: 4.3,
+    description: "Gentle Hydration with Natural Glow",
+    longDescription: "The Vasudhaara Lip Care Candle is a luxurious fusion of nature and innovation, specially crafted to provide deep nourishment and long-lasting protection for your lips. Designed for all seasons, this unique lip candle gently hydrates, repairs, and revitalizes dry and chapped lips.Infused with carefully selected natural oils and exotic herbal extracts, it works as an intensive lip therapy, restoring softness and enhancing the natural glow of your lips. The soothing warmth not only improves absorption but also offers a relaxing, spa-like experience at home",
+    ingredients: "Rose extract, rose oil, beeswax, organic shea butter, sweet almond oil, badam oil, vitamin E, and natural plant waxes",
+    benefits: [
+      "Deep nourishment & repair for damaged lips",
+      " Enriched with herbal and natural ingredients",
+      "Therapy for better absorption",
+      "Long-lasting hydration & protection",
+      "Lightweight, smooth, and non-sticky feel",
+      "Suitable for daily use"
+    ],
+    image: "/lipcandle0.png",
+    images: ["/lipcandle0.png", "/lipcandle1.png"],
+    category: "Skin Care",
+    date: "2026-13-04"
   }
 ];
 
