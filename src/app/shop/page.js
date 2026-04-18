@@ -115,7 +115,7 @@ const PRODUCTS = [
     howToApply: "Clean the face,neck and pat it dry. Take 2–3 drops of Kanaka Taila and gently massage on the skin. Leave it on for 30–60 minutes or overnight if suitable. Wash off with mild cleanser. Use regularly for best results",
     image: "/kanakaoil.png",
     images: ["/kanakaoil.png", "/kanakaoil2.png"],
-    category: "Hair Care",
+    category: "Skin Care",
     date: "2024-01-20"
   },
   {
@@ -135,7 +135,7 @@ const PRODUCTS = [
       "Makes hair thick, shiny, and strong"
     ],
     image: "/Bringhraj_hair_oil1.png",
-    category: "Bath & Body",
+    category: "Hair Care",
     date: "2024-01-22"
   },
   {
