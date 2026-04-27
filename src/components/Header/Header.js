@@ -43,7 +43,7 @@ export default function Header() {
             <div className="w-8 h-8 rounded-full overflow-hidden relative">
               <Image alt="Vasudhara Logo" src="/logo.png" width={100} height={100} className="object-cover w-full h-full" priority={true} />
             </div>
-            <p className="font-bold text-inherit text-lg sm:text-xl tracking-wide bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent">VASUDHARA</p>
+            <p className="font-bold text-inherit text-lg sm:text-xl tracking-wide bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent">VASUDHAARA</p>
           </div>
         </NavbarBrand>
       </NavbarContent>
