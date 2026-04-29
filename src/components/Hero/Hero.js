@@ -18,7 +18,7 @@ export default function Hero() {
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto flex flex-col items-center gap-6">
         <h1
-          className="text-5xl md:text-7xl font-bold text-white tracking-tight animate-fade-in-up opacity-0"
+          className="text-4xl sm:text-5xl md:text-7xl font-bold text-white tracking-tight animate-fade-in-up opacity-0"
         >
           Shop for <span className="bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent">Beauty</span>,
           <br />
@@ -34,13 +34,13 @@ export default function Hero() {
         </p>
 
         <div
-          className="flex gap-4 mt-4 animate-fade-in-up opacity-0 [animation-delay:400ms]"
+          className="flex flex-col sm:flex-row w-full sm:w-auto gap-4 mt-4 animate-fade-in-up opacity-0 [animation-delay:400ms]"
         >
           <Button
             size="lg"
             color="primary"
             variant="shadow"
-            className="font-semibold text-lg px-8 py-6 bg-gradient-to-r from-pink-500 to-yellow-500 border-none"
+            className="w-full sm:w-auto font-semibold text-lg px-8 py-6 bg-gradient-to-r from-pink-500 to-yellow-500 border-none"
             as="a"
             href="/shop"
           >
@@ -49,7 +49,7 @@ export default function Hero() {
           <Button
             size="lg"
             variant="bordered"
-            className="font-semibold text-lg px-8 py-6 text-white border-white/30 hover:bg-white/10"
+            className="w-full sm:w-auto font-semibold text-lg px-8 py-6 text-white border-white/30 hover:bg-white/10"
             as="a"
             href="/about"
           >
