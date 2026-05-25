@@ -129,6 +129,7 @@ export default function ProductCard({ title, price, description, image, images, 
     })
   };
 
+
   return (
     <motion.div
       whileHover={{ y: -5 }}
@@ -146,8 +147,8 @@ export default function ProductCard({ title, price, description, image, images, 
           onTouchStart={handleTouchStart}
           onClick={(e) => e.preventDefault()}
         >
-          {/* Image Slider Container */}
-          <div className="relative w-full h-[250px] overflow-hidden rounded-t-lg bg-neutral-800 select-none">
+          {/* Image Slider Container - Responsive Height */}
+          <div className="relative w-full h-[180px] sm:h-[220px] overflow-hidden rounded-t-lg bg-neutral-800 select-none">
             <AnimatePresence initial={false} custom={direction} mode="popLayout">
               <motion.div
                 key={currentImageIndex}
@@ -229,18 +230,18 @@ export default function ProductCard({ title, price, description, image, images, 
           </div>
         </CardBody>
         <CardFooter 
-          className="text-small justify-between flex-col items-start gap-2 p-4"
+          className="text-small justify-between flex-col items-start gap-1 sm:gap-2 p-3 sm:p-4"
           onClick={(e) => e.stopPropagation()}
         >
           <div 
-            className="w-full flex justify-between items-start"
+            className="w-full flex justify-between items-start gap-1 mb-1"
             onClick={(e) => e.stopPropagation()}
           >
-            <b className="text-lg text-white">{title}</b>
-            <p className="text-default-500 text-lg font-semibold">₹{price}</p>
+            <b className="text-sm sm:text-base md:text-lg text-white font-bold line-clamp-2 flex-1 min-h-[36px] sm:min-h-[48px] leading-tight">{title}</b>
+            <p className="text-default-500 text-sm sm:text-base md:text-lg font-semibold shrink-0">₹{price}</p>
           </div>
           <p 
-            className="text-default-400 text-sm line-clamp-2"
+            className="text-default-400 text-xs sm:text-sm line-clamp-2 min-h-[32px] sm:min-h-[40px] leading-snug"
             onClick={(e) => e.stopPropagation()}
           >
             {description}
@@ -252,7 +253,6 @@ export default function ProductCard({ title, price, description, image, images, 
             radius="full"
             size="sm"
             onPress={handleAddToCart}
-            onClick={handleAddToCart}
             onTouchStart={(e) => {
               e.stopPropagation();
               handleAddToCart(e);

@@ -125,7 +125,7 @@ export default function ProductDetailsModal({ isOpen, onClose, product }) {
                   color={isAdded ? "success" : "primary"}
                   size="lg"
                   className="flex-1 font-semibold shadow-lg shadow-primary/30"
-                  onClick={handleAddToCart}
+                  onPress={handleAddToCart}
                 >
                   {isAdded ? "Added to Cart" : "Add to Cart"}
                 </Button>

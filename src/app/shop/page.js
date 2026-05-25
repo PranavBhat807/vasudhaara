@@ -1,7 +1,7 @@
 
 "use client";
 
-import React, { useState, useMemo, Suspense } from "react";
+import React, { useState, useMemo, Suspense, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import ProductCard from "@/components/ProductCard/ProductCard";
 import ProductDetailsModal from "@/components/ProductDetailsModal/ProductDetailsModal";
@@ -29,7 +29,8 @@ const PRODUCTS = [
     image: "/rosebalm3.png",
     images: ["/rosebalm3.png", "/rosylipbalm.png"],
     category: "Skin Care",
-    date: "2024-01-10"
+    date: "2024-01-10",
+    section: "Beauty"
   },
 
   {
@@ -51,7 +52,8 @@ const PRODUCTS = [
     image: "/hibisbalm2.png",
     images: ["/hibisbalm2.png", "/hibislipbalm.png"],
     category: "Skin Care",
-    date: "2024-01-12"
+    date: "2024-01-12",
+    section: "Beauty"
   },
   {
     id: 3,
@@ -72,7 +74,8 @@ const PRODUCTS = [
     image: "/berrybalm2.png",
     images: ["/berrybalm2.png", "/berrylipbalm.png"],
     category: "Skin Care",
-    date: "2024-01-15"
+    date: "2024-01-15",
+    section: "Beauty"
   },
   {
     id: 4,
@@ -93,7 +96,8 @@ const PRODUCTS = [
     image: "/reset.png",
     images: ["/reset2.png", "/reset.png"],
     category: "Skin Care",
-    date: "2024-01-18"
+    date: "2024-01-18",
+    section: "Beauty"
   },
   {
     id: 5,
@@ -116,7 +120,8 @@ const PRODUCTS = [
     image: "/kanakaoil.png",
     images: ["/kanakaoil.png", "/kanakaoil2.png"],
     category: "Skin Care",
-    date: "2024-01-20"
+    date: "2024-01-20",
+    section: "Beauty"
   },
   {
     id: 6,
@@ -136,7 +141,8 @@ const PRODUCTS = [
     ],
     image: "/Bringhraj_hair_oil1.png",
     category: "Hair Care",
-    date: "2024-01-22"
+    date: "2024-01-22",
+    section: "Beauty"
   },
   {
     id: 7,
@@ -157,7 +163,8 @@ const PRODUCTS = [
     image: "/Set_of_10.png",
     images: ["/Set_of_10.png", "/rosebalm3.png"],
     category: "Skin Care",
-    date: "2024-01-10"
+    date: "2024-01-10",
+    section: "Beauty"
   },
   {
     id: 8,
@@ -178,7 +185,8 @@ const PRODUCTS = [
     image: "/Kids.png",
     images: ["/Kids.png", "/rosebalm3.png"],
     category: "Skin Care",
-    date: "2024-01-10"
+    date: "2024-01-10",
+    section: "Beauty"
   },
   {
     id: 9,
@@ -198,7 +206,8 @@ const PRODUCTS = [
     ],
     image: "/nail_nourish1.png",
     category: "Skin Care",
-    date: "2024-01-10"
+    date: "2024-01-10",
+    section: "Beauty"
   },
   {
     id: 10,
@@ -217,7 +226,8 @@ const PRODUCTS = [
     ],
     image: "/coconutoil0.png",
     category: "Hair Care",
-    date: "2026-13-04"
+    date: "2026-13-04",
+    section: "Beauty"
   },
   {
     id: 11,
@@ -238,7 +248,98 @@ const PRODUCTS = [
     image: "/lipcandle0.png",
     images: ["/lipcandle0.png", "/lipcandle1.png"],
     category: "Skin Care",
-    date: "2026-13-04"
+    date: "2026-13-04",
+    section: "Beauty"
+  },
+  {
+    id: 12,
+    title: "Lotus Seed Lehayam",
+    price: 149,
+    rating: 4.7,
+    description: "Timeless blend of Makhana with health",
+    longDescription: "Lotus Seed Leha is a nourishing Ayurvedic herbal formulation prepared using lotus seeds and traditional rejuvenating ingredients. It is known for supporting overall vitality, strengthening the nervous system, and promoting natural energy and stamina. This wholesome leha helps in improving digestion, calming the mind, supporting reproductive health, and enhancing overall well-being through its restorative and balancing properties.",
+    ingredients: "Lotus Seeds (Makhana), Almonds, Ashwagandha, Brahmi, Jaggery, Cow’s Ghee, Cinnamon, Cardamom, Cloves, Nutmeg, Black Pepper, Pippali, Shatavari, Bala, Vidarikand, Licorice (Yashtimadhu), Dry Dates, Amla, Gokshura, Safed Musli, Pistachios, Pumpkin Seeds, Flax Seeds, Chia Seeds.",
+    benefits: [
+      "Natural energy & stamina support",
+      "Supports immunity and overall wellness",
+      "Improves digestion and nutrient absorption",
+      "Enhances memory, focus & calmness",
+      "Supports overall vitality and strength",
+      "Helps maintain healthy metabolism",
+      "Diabetic friendly with low glycemic ingredients"
+    ],
+    howToApply: "Take 1–2 teaspoons (10–20g) in the morning on an empty stomach or as directed by your wellness expert. Can be consumed with warm milk for better nourishment.",
+    note: "Prepared using traditional Ayurvedic methods with herbs, spices, jaggery, and cow’s ghee. Consult your healthcare professional if you are pregnant, nursing, taking medication, or have a medical condition.",
+    image: "/lotus_seed_leha.png",
+    category: "Wellness",
+    date: "2026-05-25",
+    section: "Herbal Medicine"
+  },
+  {
+    id: 13,
+    title: "Ashwagandha Capsules",
+    price: 299,
+    rating: 4.8,
+    description: "Rejuvenating adaptogen for stress relief & energy",
+    longDescription: "Ashwagandha (Withania somnifera) is the king of adaptogens, celebrated for centuries for its ability to help the body manage stress, boost energy levels, and improve concentration. Our high-potency capsules support calm nerves, vitality, and physical endurance.",
+    ingredients: "Pure standardized organic Ashwagandha root extract (500mg per capsule), plant-based cellulose capsule.",
+    benefits: [
+      "Helps reduce stress, anxiety, and cortisol levels",
+      "Improves sleep quality and combats fatigue",
+      "Supports physical strength, endurance, and recovery",
+      "Enhances mental clarity, focus, and memory",
+      "Aids in maintaining a balanced immune system"
+    ],
+    howToApply: "Take 1-2 capsules twice daily with warm water or milk after meals, or as recommended by your health care provider.",
+    note: "Not recommended for children or pregnant women without medical supervision.",
+    image: "/ashwagandha_caps.png",
+    category: "Wellness",
+    date: "2026-05-25",
+    section: "Herbal Medicine"
+  },
+  {
+    id: 14,
+    title: "Amrutha Giloy Syrup",
+    price: 199,
+    rating: 4.6,
+    description: "Traditional immune support and fever relief",
+    longDescription: "Vasudhaara Amrutha Giloy Syrup is formulated with pure Giloy (Guduchi), renowned in Ayurveda as 'Amrita'—the root of immortality. This syrup is a potent immunomodulator that helps fight chronic infections, aids in recovery from fevers, and purifies the blood.",
+    ingredients: "Giloy stem extract (Tinospora cordifolia), tulsi extract, neem, and organic sweetener base.",
+    benefits: [
+      "Boosts overall immunity and viral defense",
+      "Helps manage chronic and recurrent fevers",
+      "Supports blood purification and glowing skin",
+      "Enhances liver and kidney detoxification processes",
+      "Improves digestion and gut health"
+    ],
+    howToApply: "For adults, take 10-15 ml (2-3 teaspoons) with an equal quantity of warm water twice a day. For children above 5, take 5 ml (1 teaspoon) twice a day.",
+    note: "Shake well before use. Keep in a cool, dry place away from direct sunlight.",
+    image: "/giloy_syrup.png",
+    category: "Wellness",
+    date: "2026-05-25",
+    section: "Herbal Medicine"
+  },
+  {
+    id: 15,
+    title: "Ayurvedic Pain Relief Oil",
+    price: 349,
+    rating: 4.9,
+    description: "Soothing relief for joints, muscles & back pain",
+    longDescription: "Crafted using the authentic Mahanarayan method, this specialized pain relief oil is a sesame-based herbal decoction containing over 30 botanical extracts. It deeply penetrates muscle tissues and joint cavities to alleviate stiffness, swelling, and chronic aches.",
+    ingredients: "Sesame oil, Shatavari, Ashwagandha, Bala, Neem, Eucalyptus oil, Camphor, Menthol, and custom herbal blend.",
+    benefits: [
+      "Relieves joint pain, arthritis, and muscle stiffness",
+      "Reduces inflammation and swelling in affected areas",
+      "Improves blood circulation and flexibility",
+      "Soothes sore muscles after intense exercise",
+      "100% natural, quick absorbing formula"
+    ],
+    howToApply: "Warm the oil slightly and massage gently over the affected area for 10-15 minutes. Apply a warm compress afterwards for enhanced absorption. Use 2-3 times daily.",
+    note: "For external use only. Do not apply on broken skin, cuts, or open wounds.",
+    image: "/pain_relief_oil.png",
+    category: "Pain Relief",
+    date: "2026-05-25",
+    section: "Herbal Medicine"
   }
 ];
 
@@ -246,12 +347,21 @@ function ShopContent() {
   const searchParams = useSearchParams();
   const collectionQuery = searchParams.get("collection");
 
+  const [activeSection, setActiveSection] = useState("Beauty");
   const [searchQuery, setSearchQuery] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [selectedProduct, setSelectedProduct] = useState(null);
 
+  // Auto-switch to Beauty section if a collection filter is active in the URL query
+  useEffect(() => {
+    if (collectionQuery) {
+      setActiveSection("Beauty");
+    }
+  }, [collectionQuery]);
+
   const filteredProducts = useMemo(() => {
     return PRODUCTS.filter((product) => {
+      const matchesSection = product.section === activeSection;
       const matchesSearch = product.title.toLowerCase().includes(searchQuery.toLowerCase());
       const matchesCategory = categoryFilter === "all" || product.category === categoryFilter;
 
@@ -260,15 +370,16 @@ function ShopContent() {
       else if (product.title.toLowerCase().includes("oil") || product.title.toLowerCase().includes("taila")) productCollection = "Oil";
       else if (product.title.toLowerCase().includes("heel")) productCollection = "CrackHeel";
 
-      const matchesCollection = !collectionQuery || productCollection === collectionQuery;
+      // If active section is Herbal Medicine, ignore collectionQuery since collection filtering only applies to Beauty
+      const matchesCollection = activeSection === "Herbal Medicine" || !collectionQuery || productCollection === collectionQuery;
 
-      return matchesSearch && matchesCategory && matchesCollection;
+      return matchesSection && matchesSearch && matchesCategory && matchesCollection;
     });
-  }, [searchQuery, categoryFilter, collectionQuery]);
+  }, [searchQuery, categoryFilter, collectionQuery, activeSection]);
 
   return (
     <div className="min-h-screen pt-12 px-6 max-w-7xl mx-auto">
-      <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
         <div className="space-y-2">
           <h1 className="text-4xl font-bold bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent">Shop Our Collection</h1>
           <p className="text-neutral-400">Discover nature's best secrets.</p>
@@ -285,26 +396,69 @@ function ShopContent() {
         </div>
       </div>
 
-      {filteredProducts.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {filteredProducts.map((product, index) => (
-            <motion.div
-              key={product.id}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3, delay: index * 0.05 }}
-              className="h-[400px] cursor-pointer"
-              onClick={() => setSelectedProduct(product)}
-            >
-              <ProductCard {...product} />
-            </motion.div>
-          ))}
+      {/* Premium Glassmorphic Tab Switcher */}
+      <div className="flex justify-center mb-12">
+        <div className="inline-flex bg-neutral-900/60 backdrop-blur-md p-1.5 rounded-full border border-white/5 shadow-2xl relative overflow-hidden">
+          {["Beauty", "Herbal Medicine"].map((section) => {
+            const isActive = activeSection === section;
+            return (
+              <button
+                key={section}
+                onClick={() => {
+                  setActiveSection(section);
+                  // Reset search query when switching sections to ensure a clean view
+                  setSearchQuery("");
+                }}
+                className={`relative px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 z-10 ${isActive
+                    ? "text-white"
+                    : "text-neutral-400 hover:text-neutral-200"
+                  }`}
+              >
+                {isActive && (
+                  <motion.div
+                    layoutId="activeSectionTab"
+                    className="absolute inset-0 bg-gradient-to-r from-pink-500 to-yellow-500 rounded-full shadow-lg"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                <span className="relative z-20">{section}</span>
+              </button>
+            );
+          })}
         </div>
-      ) : (
-        <div className="text-center py-20 text-neutral-500">
-          <p className="text-xl">No products found matching your search.</p>
-        </div>
-      )}
+      </div>
+
+      {/* Animate tab transitions cleanly */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeSection}
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -15 }}
+          transition={{ duration: 0.25 }}
+        >
+          {filteredProducts.length > 0 ? (
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-8">
+              {filteredProducts.map((product, index) => (
+                <motion.div
+                  key={product.id}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.2, delay: index * 0.03 }}
+                  className="h-[360px] sm:h-[410px] cursor-pointer"
+                  onClick={() => setSelectedProduct(product)}
+                >
+                  <ProductCard {...product} />
+                </motion.div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-20 text-neutral-500">
+              <p className="text-xl">No products found matching your search.</p>
+            </div>
+          )}
+        </motion.div>
+      </AnimatePresence>
 
       <ProductDetailsModal
         isOpen={!!selectedProduct}
