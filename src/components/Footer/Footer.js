@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Brand Section */}
         <div className="space-y-4">
-          <h2 className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent">VASUDHARA</h2>
+          <h2 className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent">VASUDHAARA</h2>
           <p className="text-sm text-neutral-400">
             Empowering beauty with herbs. Shop for a cause, embrace nature.
           </p>
@@ -48,7 +48,7 @@ export default function Footer() {
       </div>
       <Divider className="my-8 bg-neutral-800" />
       <div className="text-center text-xs text-neutral-500">
-        © {new Date().getFullYear()} Vasudhara. All rights reserved.
+        © {new Date().getFullYear()} Vasudhaara. All rights reserved.
       </div>
     </footer>
   );
