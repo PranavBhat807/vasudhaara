@@ -253,12 +253,12 @@ const PRODUCTS = [
   },
   {
     id: 12,
-    title: "Lotus Seed Lehayam",
-    price: 149,
+    title: "Makhana Leha 200gm",
+    price: 999,
     rating: 4.7,
-    description: "Timeless blend of Makhana with health",
-    longDescription: "Lotus Seed Leha is a nourishing Ayurvedic herbal formulation prepared using lotus seeds and traditional rejuvenating ingredients. It is known for supporting overall vitality, strengthening the nervous system, and promoting natural energy and stamina. This wholesome leha helps in improving digestion, calming the mind, supporting reproductive health, and enhancing overall well-being through its restorative and balancing properties.",
-    ingredients: "Lotus Seeds (Makhana), Almonds, Ashwagandha, Brahmi, Jaggery, Cow’s Ghee, Cinnamon, Cardamom, Cloves, Nutmeg, Black Pepper, Pippali, Shatavari, Bala, Vidarikand, Licorice (Yashtimadhu), Dry Dates, Amla, Gokshura, Safed Musli, Pistachios, Pumpkin Seeds, Flax Seeds, Chia Seeds.",
+    description: "Enhances Ojas & Overall Wellness",
+    longDescription: "Lotus Seed Leha(Makhana) is a nourishing Ayurvedic herbal formulation prepared using lotus seeds and traditional rejuvenating ingredients. It is known for supporting overall vitality, strengthening the nervous system, and promoting natural energy and stamina. This wholesome leha helps in improving digestion, calming the mind, supporting reproductive health, and enhancing overall well-being through its restorative and balancing properties.",
+    ingredients: "Lotus Seeds (Makhana), Cow’s Ghee, Jaggery, Ashwagandha, Shatavari, Vidarikand, Bala, Pippali, Dry Ginger, Cinnamon, Cardamom, Chia Seeds, Clove, Nutmeg, Jatamansi, Brahmi, Saffron",
     benefits: [
       "Natural energy & stamina support",
       "Supports immunity and overall wellness",
@@ -266,10 +266,11 @@ const PRODUCTS = [
       "Enhances memory, focus & calmness",
       "Supports overall vitality and strength",
       "Helps maintain healthy metabolism",
-      "Diabetic friendly with low glycemic ingredients"
+      "Diabetic friendly with low glycemic ingredients",
+      "Supports Healthy Hemoglobin Levels"
     ],
     howToApply: "Take 1–2 teaspoons (10–20g) in the morning on an empty stomach or as directed by your wellness expert. Can be consumed with warm milk for better nourishment.",
-    note: "Prepared using traditional Ayurvedic methods with herbs, spices, jaggery, and cow’s ghee. Consult your healthcare professional if you are pregnant, nursing, taking medication, or have a medical condition.",
+    note: "Cruelty Free and 100% Organic",
     image: "/lotus_seed_leha.png",
     category: "Wellness",
     date: "2026-05-25",
@@ -277,22 +278,26 @@ const PRODUCTS = [
   },
   {
     id: 13,
-    title: "Ashwagandha Capsules",
-    price: 299,
+    title: "Makhana Leha (Gym Version)",
+    price: 1200,
     rating: 4.8,
-    description: "Rejuvenating adaptogen for stress relief & energy",
-    longDescription: "Ashwagandha (Withania somnifera) is the king of adaptogens, celebrated for centuries for its ability to help the body manage stress, boost energy levels, and improve concentration. Our high-potency capsules support calm nerves, vitality, and physical endurance.",
-    ingredients: "Pure standardized organic Ashwagandha root extract (500mg per capsule), plant-based cellulose capsule.",
+    description: "High-protein Ayurvedic blend for strength, recovery & endurance",
+    longDescription: "Vasudhaara High-Protein Gym Version is a premium Ayurvedic protein supplement crafted with lotus seeds (makhana), plant-based proteins, Ashwagandha, Brahmi, pumpkin seeds, flax seeds, and nutrient-rich superfoods to support muscle growth, workout recovery, stamina, and sustained energy naturally. Designed for gym-goers, athletes, and fitness enthusiasts, this high-protein herbal blend helps improve endurance, immunity, focus, and overall wellness without refined sugar or artificial additives. Slow-cooked using traditional Ayurvedic methods, it delivers clean nutrition for strength, performance, and daily vitality.",
+    ingredients: "Lotus Seeds (Makhana), Cow’s Ghee, Jaggery, Ashwagandha, Shatavari, Vidarikand, Bala, Pippali, Dry Ginger, Cinnamon, Cardamom, Chia Seeds, Clove, Nutmeg, Jatamansi, Brahmi, Saffron, Almonds, Cashew, Resins, Pumpkin seeds, Dates, Figs",
     benefits: [
-      "Helps reduce stress, anxiety, and cortisol levels",
-      "Improves sleep quality and combats fatigue",
-      "Supports physical strength, endurance, and recovery",
-      "Enhances mental clarity, focus, and memory",
-      "Aids in maintaining a balanced immune system"
+      "Supports lean muscle growth with high-quality plant protein",
+      "Improves strength, stamina, and endurance",
+      "Aids post-workout recovery and muscle repair",
+      "Provides sustained energy throughout the day",
+      "Supports immunity and overall vitality",
+      "Enhances memory, focus, and mental clarity with Brahmi",
+      "Rich in protein, fiber, omega-3, magnesium, and zinc",
+      "Helps reduce inflammation and supports heart health",
+      "Diabetic friendly with low glycemic ingredients",
     ],
     howToApply: "Take 1-2 capsules twice daily with warm water or milk after meals, or as recommended by your health care provider.",
-    note: "Not recommended for children or pregnant women without medical supervision.",
-    image: "/ashwagandha_caps.png",
+    note: "Cruelty free, organic and 100% naturally made",
+    image: "/makhana_gym_version.png",
     category: "Wellness",
     date: "2026-05-25",
     section: "Herbal Medicine"
@@ -410,8 +415,8 @@ function ShopContent() {
                   setSearchQuery("");
                 }}
                 className={`relative px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 z-10 ${isActive
-                    ? "text-white"
-                    : "text-neutral-400 hover:text-neutral-200"
+                  ? "text-white"
+                  : "text-neutral-400 hover:text-neutral-200"
                   }`}
               >
                 {isActive && (
