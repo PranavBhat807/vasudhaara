@@ -225,9 +225,11 @@ export default function ProductCard({ title, price, description, image, images, 
             )}
           </div>
 
-          <div className="absolute top-2 right-2 z-30 bg-black/50 backdrop-blur-md px-2 py-1 rounded-full text-warning text-sm font-bold flex items-center gap-1 shadow-sm pointer-events-none">
-            <span>★</span> {rating}
-          </div>
+          {rating && rating > 0 ? (
+            <div className="absolute top-2 right-2 z-30 bg-black/50 backdrop-blur-md px-2 py-1 rounded-full text-warning text-sm font-bold flex items-center gap-1 shadow-sm pointer-events-none">
+              <span>★</span> {rating}
+            </div>
+          ) : null}
         </CardBody>
         <CardFooter 
           className="text-small justify-between flex-col items-start gap-1 sm:gap-2 p-3 sm:p-4"

@@ -357,6 +357,25 @@ function ShopContent() {
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [selectedProduct, setSelectedProduct] = useState(null);
 
+  // Dynamic reviews rating state
+  const [averageRatings, setAverageRatings] = useState({});
+
+  const fetchAverageRatings = async () => {
+    try {
+      const res = await fetch("/api/reviews");
+      if (res.ok) {
+        const data = await res.json();
+        setAverageRatings(data.averages || {});
+      }
+    } catch (err) {
+      console.error("Error fetching average ratings:", err);
+    }
+  };
+
+  useEffect(() => {
+    fetchAverageRatings();
+  }, []);
+
   // Auto-switch to Beauty section if a collection filter is active in the URL query
   useEffect(() => {
     if (collectionQuery) {
@@ -444,18 +463,21 @@ function ShopContent() {
         >
           {filteredProducts.length > 0 ? (
             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-8">
-              {filteredProducts.map((product, index) => (
-                <motion.div
-                  key={product.id}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.2, delay: index * 0.03 }}
-                  className="h-[360px] sm:h-[410px] cursor-pointer"
-                  onClick={() => setSelectedProduct(product)}
-                >
-                  <ProductCard {...product} />
-                </motion.div>
-              ))}
+              {filteredProducts.map((product, index) => {
+                const dynamicRating = averageRatings[product.id]?.average_rating || null;
+                return (
+                  <motion.div
+                    key={product.id}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.2, delay: index * 0.03 }}
+                    className="h-[360px] sm:h-[410px] cursor-pointer"
+                    onClick={() => setSelectedProduct(product)}
+                  >
+                    <ProductCard {...product} rating={dynamicRating} />
+                  </motion.div>
+                );
+              })}
             </div>
           ) : (
             <div className="text-center py-20 text-neutral-500">
@@ -469,6 +491,7 @@ function ShopContent() {
         isOpen={!!selectedProduct}
         onClose={() => setSelectedProduct(null)}
         product={selectedProduct}
+        onReviewAdded={fetchAverageRatings}
       />
     </div>
   );
