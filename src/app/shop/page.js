@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useMemo, Suspense, useEffect } from "react";
@@ -16,21 +15,23 @@ const PRODUCTS = [
     price: 199,
     rating: 4.8,
     description: "Gentle Hydration with Natural Glow",
-    longDescription: "Our Rose Lip Balm is crafted with the essence of fresh roses and a blend of ultra-nourishing oils. It not only moisturizes but also imparts a subtle, natural pink tint to your lips, keeping them soft and petal-smooth all day long.",
-    ingredients: "Rose extract, rose oil, beeswax, organic shea butter, sweet almond oil, badam oil, vitamin E, and natural plant waxes.",
+    longDescription:
+      "Our Rose Lip Balm is crafted with the essence of fresh roses and a blend of ultra-nourishing oils. It not only moisturizes but also imparts a subtle, natural pink tint to your lips, keeping them soft and petal-smooth all day long.",
+    ingredients:
+      "Rose extract, rose oil, beeswax, organic shea butter, sweet almond oil, badam oil, vitamin E, and natural plant waxes.",
     benefits: [
       "Instantly softens rough lips",
       "Adds a natural rosy tint",
       "Hydrates for up to 12 hours",
       "Soothes irritation and dryness",
       "Rich in antioxidants for healthy lips",
-      "Free from synthetic fragrances and preservatives"
+      "Free from synthetic fragrances and preservatives",
     ],
     image: "/rosebalm3.png",
     images: ["/rosebalm3.png", "/rosylipbalm.png"],
     category: "Skin Care",
     date: "2024-01-10",
-    section: "Beauty"
+    section: "Beauty",
   },
 
   {
@@ -39,21 +40,23 @@ const PRODUCTS = [
     price: 199,
     rating: 4.5,
     description: "Repair & Restore Naturally",
-    longDescription: "Enriched with the goodness of hibiscus, this lip balm is a miracle worker for pigmented and sun-damaged lips. It naturally exfoliates and rejuvenates, revealing softer, brighter, and healthier-looking lips.",
-    ingredients: "Hibiscus flower extract, coconut oil, beeswax, cocoa butter, vitamin E, castor oil, and organic honey.",
+    longDescription:
+      "Enriched with the goodness of hibiscus, this lip balm is a miracle worker for pigmented and sun-damaged lips. It naturally exfoliates and rejuvenates, revealing softer, brighter, and healthier-looking lips.",
+    ingredients:
+      "Hibiscus flower extract, coconut oil, beeswax, cocoa butter, vitamin E, castor oil, and organic honey.",
     benefits: [
       "Helps lighten dark lips",
       "Provides intense moisture",
       "Natural exfoliation for smoother texture",
       "Protects against UV damage",
       "Restores natural lip color",
-      "100% natural and safe for daily use"
+      "100% natural and safe for daily use",
     ],
     image: "/hibisbalm2.png",
     images: ["/hibisbalm2.png", "/hibislipbalm.png"],
     category: "Skin Care",
     date: "2024-01-12",
-    section: "Beauty"
+    section: "Beauty",
   },
   {
     id: 3,
@@ -61,21 +64,23 @@ const PRODUCTS = [
     price: 199,
     rating: 4.9,
     description: "Natural Care for Soft & Healthy Lips",
-    longDescription: "Our Strawberry Lip Balm is made with a rich blend of organic and natural ingredients that deeply nourish dry and chapped lips. Infused with strawberry extract, it helps restore natural lip softness while giving a mild fruity aroma.",
-    ingredients: "Strawberry extract, castor oil, beeswax, shea butter, coconut oil, vitamin E, almond oil, cocoa butter, and natural plant waxes.",
+    longDescription:
+      "Our Strawberry Lip Balm is made with a rich blend of organic and natural ingredients that deeply nourish dry and chapped lips. Infused with strawberry extract, it helps restore natural lip softness while giving a mild fruity aroma.",
+    ingredients:
+      "Strawberry extract, castor oil, beeswax, shea butter, coconut oil, vitamin E, almond oil, cocoa butter, and natural plant waxes.",
     benefits: [
       "Deeply moisturizes dry and cracked lips",
       "Provides long-lasting hydration",
       "Helps reduce lip pigmentation with regular use",
       "Protects lips from environmental damage",
       "Leaves lips soft, smooth, and naturally glossy",
-      "Free from parabens, artificial colors, and chemicals"
+      "Free from parabens, artificial colors, and chemicals",
     ],
     image: "/berrybalm2.png",
     images: ["/berrybalm2.png", "/berrylipbalm.png"],
     category: "Skin Care",
     date: "2024-01-15",
-    section: "Beauty"
+    section: "Beauty",
   },
   {
     id: 4,
@@ -83,21 +88,23 @@ const PRODUCTS = [
     price: 199,
     rating: 4.7,
     description: "Heals your heel in seconds.",
-    longDescription: "Say goodbye to cracked heels with our advanced RESET formula. Penetrating deep into the skin layers, it repairs fissures, softens hard skin, and provides a protective barrier against further damage.",
-    ingredients: "Shea butter, peppermint oil, tea tree oil, aloe vera gel, and vitamin E, cocoa butter, mimosa pudica,coconut oil, olive oil, neem .",
+    longDescription:
+      "Say goodbye to cracked heels with our advanced RESET formula. Penetrating deep into the skin layers, it repairs fissures, softens hard skin, and provides a protective barrier against further damage.",
+    ingredients:
+      "Shea butter, peppermint oil, tea tree oil, aloe vera gel, and vitamin E, cocoa butter, mimosa pudica,coconut oil, olive oil, neem .",
     benefits: [
       "Visible results in just 3 days",
       "Soothes painful cracks immediately",
       "Softens hard calluses",
       "Antimicrobial properties prevent infection",
       "Non-greasy and fast-absorbing",
-      "Suitable for diabetic foot care"
+      "Suitable for diabetic foot care",
     ],
     image: "/reset.png",
     images: ["/reset2.png", "/reset.png"],
     category: "Skin Care",
     date: "2024-01-18",
-    section: "Beauty"
+    section: "Beauty",
   },
   {
     id: 5,
@@ -105,23 +112,26 @@ const PRODUCTS = [
     price: 499,
     rating: 4.6,
     description: "Advanced Herbal Face Mark Remover",
-    longDescription: "Kanaka Taila is a traditional Ayurvedic formulation known for its complexion-enhancing properties. It effectively reduces scars, dark spots, and blemishes, giving you a radiant and even skin tone.",
-    ingredients: "Sesame oil, licorice, manjistha, red sandalwood, saffron, and lotus extracts, almond oil, coconut oil, nutmeg.",
+    longDescription:
+      "Kanaka Taila is a traditional Ayurvedic formulation known for its complexion-enhancing properties. It effectively reduces scars, dark spots, and blemishes, giving you a radiant and even skin tone.",
+    ingredients:
+      "Sesame oil, licorice, manjistha, red sandalwood, saffron, and lotus extracts, almond oil, coconut oil, nutmeg.",
     benefits: [
       "Helps reduce wrinkles and improves skin textures",
       "Soothes burnt areas and reduces burning sensations",
       "Helps stop bleeding from minor cut",
       "Aids in faster wound healing",
       "100% Hand made and chemical-free",
-      "Helps reduce open pores and improves skin appearances"
+      "Helps reduce open pores and improves skin appearances",
     ],
     note: "Before first use, perform a patch test by applying a small amount of Kanaka Taila on the inner forearm or behind the ear. Wait for 24 hours to check for any irritation, redness, or allergic reaction. If no discomfort occurs, it is safe to use.",
-    howToApply: "Clean the face,neck and pat it dry. Take 2–3 drops of Kanaka Taila and gently massage on the skin. Leave it on for 30–60 minutes or overnight if suitable. Wash off with mild cleanser. Use regularly for best results",
+    howToApply:
+      "Clean the face,neck and pat it dry. Take 2–3 drops of Kanaka Taila and gently massage on the skin. Leave it on for 30–60 minutes or overnight if suitable. Wash off with mild cleanser. Use regularly for best results",
     image: "/kanakaoil.png",
     images: ["/kanakaoil.png", "/kanakaoil2.png"],
     category: "Skin Care",
     date: "2024-01-20",
-    section: "Beauty"
+    section: "Beauty",
   },
   {
     id: 6,
@@ -129,20 +139,22 @@ const PRODUCTS = [
     price: 349,
     rating: 4.3,
     description: "Oil just four your scalp",
-    longDescription: "Unlock stronger, healthier hair with the ancient power of Bhringraj 🌿     Infused with nature’s most trusted hair-revitalizing herb, this nourishing oil deeply strengthens roots, boosts natural hair growth, and helps reduce hair fall from the very first use. Regular application works to slow premature graying, restore shine, and revive dull, lifeless hair—leaving it thicker, smoother, and visibly healthier. Perfect for daily care and suitable for all hair types, this is your go-to solution for naturally beautiful, resilient hair.",
-    ingredients: "Bringhraj extract, coconut oil, amla, sesame oil, hibiscus, and brahmi.",
+    longDescription:
+      "Unlock stronger, healthier hair with the ancient power of Bhringraj 🌿     Infused with nature’s most trusted hair-revitalizing herb, this nourishing oil deeply strengthens roots, boosts natural hair growth, and helps reduce hair fall from the very first use. Regular application works to slow premature graying, restore shine, and revive dull, lifeless hair—leaving it thicker, smoother, and visibly healthier. Perfect for daily care and suitable for all hair types, this is your go-to solution for naturally beautiful, resilient hair.",
+    ingredients:
+      "Bringhraj extract, coconut oil, amla, sesame oil, hibiscus, and brahmi.",
     benefits: [
       "Promotes faster hair growth",
       "Reduces hair fall significantly",
       "Prevents premature graying",
       "Cools the scalp and reduces stress",
       "Eliminates dandruff",
-      "Makes hair thick, shiny, and strong"
+      "Makes hair thick, shiny, and strong",
     ],
     image: "/Bringhraj_hair_oil1.png",
     category: "Hair Care",
     date: "2024-01-22",
-    section: "Beauty"
+    section: "Beauty",
   },
   {
     id: 7,
@@ -150,21 +162,23 @@ const PRODUCTS = [
     price: 1800,
     rating: 4.8,
     description: "Gentle Hydration with Natural Glow",
-    longDescription: "Our Rose Lip Balm is crafted with the essence of fresh roses and a blend of ultra-nourishing oils. It not only moisturizes but also imparts a subtle, natural pink tint to your lips, keeping them soft and petal-smooth all day long.",
-    ingredients: "Rose extract, rose oil, beeswax, organic shea butter, sweet almond oil, jojoba oil, vitamin E, and natural plant waxes.",
+    longDescription:
+      "Our Rose Lip Balm is crafted with the essence of fresh roses and a blend of ultra-nourishing oils. It not only moisturizes but also imparts a subtle, natural pink tint to your lips, keeping them soft and petal-smooth all day long.",
+    ingredients:
+      "Rose extract, rose oil, beeswax, organic shea butter, sweet almond oil, jojoba oil, vitamin E, and natural plant waxes.",
     benefits: [
       "Instantly softens rough lips",
       "Adds a natural rosy tint",
       "Hydrates for up to 12 hours",
       "Soothes irritation and dryness",
       "Rich in antioxidants for healthy lips",
-      "Free from synthetic fragrances and preservatives"
+      "Free from synthetic fragrances and preservatives",
     ],
     image: "/Set_of_10.png",
     images: ["/Set_of_10.png", "/rosebalm3.png"],
     category: "Skin Care",
     date: "2024-01-10",
-    section: "Beauty"
+    section: "Beauty",
   },
   {
     id: 8,
@@ -172,21 +186,23 @@ const PRODUCTS = [
     price: 180,
     rating: 4.8,
     description: "Gentle Hydration with Natural Glow",
-    longDescription: "Our Rose Lip Balm is crafted with the essence of fresh roses and a blend of ultra-nourishing oils. It not only moisturizes but also imparts a subtle, natural pink tint to your lips, keeping them soft and petal-smooth all day long.",
-    ingredients: "Rose extract, rose oil, beeswax, organic shea butter, sweet almond oil, badam oil, vitamin E, and natural plant waxes.",
+    longDescription:
+      "Our Rose Lip Balm is crafted with the essence of fresh roses and a blend of ultra-nourishing oils. It not only moisturizes but also imparts a subtle, natural pink tint to your lips, keeping them soft and petal-smooth all day long.",
+    ingredients:
+      "Rose extract, rose oil, beeswax, organic shea butter, sweet almond oil, badam oil, vitamin E, and natural plant waxes.",
     benefits: [
       "Instantly softens rough lips",
       "Adds a natural rosy tint",
       "Hydrates for up to 12 hours",
       "Soothes irritation and dryness",
       "Rich in antioxidants for healthy lips",
-      "Free from synthetic fragrances and preservatives"
+      "Free from synthetic fragrances and preservatives",
     ],
     image: "/Kids.png",
     images: ["/Kids.png", "/rosebalm3.png"],
     category: "Skin Care",
     date: "2024-01-10",
-    section: "Beauty"
+    section: "Beauty",
   },
   {
     id: 9,
@@ -194,20 +210,22 @@ const PRODUCTS = [
     price: 180,
     rating: 4.8,
     description: "Nail Nourishment for You",
-    longDescription: "Our Nail Infection Liquid is formulated with a potent blend of antifungal and antiseptic botanicals. It not only targets the source of nail infections but also helps create a protective barrier, promoting healthier, clearer, and stronger nails with consistent use",
-    ingredients: "Tea tree oil, undecylenic acid, clove oil, lemon grass extract, thyme oil, eucalyptus oil, grapefruit seed extract, and purified herbal base",
+    longDescription:
+      "Our Nail Infection Liquid is formulated with a potent blend of antifungal and antiseptic botanicals. It not only targets the source of nail infections but also helps create a protective barrier, promoting healthier, clearer, and stronger nails with consistent use",
+    ingredients:
+      "Tea tree oil, undecylenic acid, clove oil, lemon grass extract, thyme oil, eucalyptus oil, grapefruit seed extract, and purified herbal base",
     benefits: [
       "Instantly softens rough nails",
       "Adds a natural rosy tint",
       "Hydrates for up to 12 hours",
       "Soothes irritation and dryness",
       "Rich in antioxidants for healthy nails",
-      "Free from synthetic fragrances and preservatives"
+      "Free from synthetic fragrances and preservatives",
     ],
     image: "/nail_nourish1.png",
     category: "Skin Care",
     date: "2024-01-10",
-    section: "Beauty"
+    section: "Beauty",
   },
   {
     id: 10,
@@ -215,19 +233,21 @@ const PRODUCTS = [
     price: 450,
     rating: 4.3,
     description: "Naturally extracted from coconut",
-    longDescription: "Our Virgin Coconut Oil is made from fresh coconuts using a cold-pressed method to retain its natural nutrients and aroma. It deeply nourishes the skin and hair, keeping them soft, smooth, and healthy. Lightweight and easily absorbed, it’s perfect for daily use as a moisturizer or hair care essential.",
+    longDescription:
+      "Our Virgin Coconut Oil is made from fresh coconuts using a cold-pressed method to retain its natural nutrients and aroma. It deeply nourishes the skin and hair, keeping them soft, smooth, and healthy. Lightweight and easily absorbed, it’s perfect for daily use as a moisturizer or hair care essential.",
     ingredients: "Coconuts",
     benefits: [
       "Deeply moisturizes skin and prevents dryness",
       "Strengthens hair and reduces hair fall",
       "Adds natural shine and smoothness to hair",
       "Helps soothe dry or irritated skin",
-      "Rich in antioxidants that support healthy skin"
+      "Rich in antioxidants that support healthy skin",
     ],
     image: "/coconutoil0.png",
+    note: "Cruelty free, organic and 100% naturally made",
     category: "Hair Care",
     date: "2026-13-04",
-    section: "Beauty"
+    section: "Beauty",
   },
   {
     id: 11,
@@ -235,21 +255,24 @@ const PRODUCTS = [
     price: 450,
     rating: 4.3,
     description: "Gentle Hydration with Natural Glow",
-    longDescription: "The Vasudhaara Lip Care Candle is a luxurious fusion of nature and innovation, specially crafted to provide deep nourishment and long-lasting protection for your lips. Designed for all seasons, this unique lip candle gently hydrates, repairs, and revitalizes dry and chapped lips.Infused with carefully selected natural oils and exotic herbal extracts, it works as an intensive lip therapy, restoring softness and enhancing the natural glow of your lips. The soothing warmth not only improves absorption but also offers a relaxing, spa-like experience at home",
-    ingredients: "Rose extract, rose oil, beeswax, organic shea butter, sweet almond oil, badam oil, vitamin E, and natural plant waxes",
+    longDescription:
+      "The Vasudhaara Lip Care Candle is a luxurious fusion of nature and innovation, specially crafted to provide deep nourishment and long-lasting protection for your lips. Designed for all seasons, this unique lip candle gently hydrates, repairs, and revitalizes dry and chapped lips.Infused with carefully selected natural oils and exotic herbal extracts, it works as an intensive lip therapy, restoring softness and enhancing the natural glow of your lips. The soothing warmth not only improves absorption but also offers a relaxing, spa-like experience at home",
+    ingredients:
+      "Rose extract, rose oil, beeswax, organic shea butter, sweet almond oil, badam oil, vitamin E, and natural plant waxes",
     benefits: [
       "Deep nourishment & repair for damaged lips",
       " Enriched with herbal and natural ingredients",
       "Therapy for better absorption",
       "Long-lasting hydration & protection",
       "Lightweight, smooth, and non-sticky feel",
-      "Suitable for daily use"
+      "Suitable for daily use",
     ],
     image: "/lipcandle0.png",
     images: ["/lipcandle0.png", "/lipcandle1.png"],
+    note: "Cruelty free, organic and 100% naturally made",
     category: "Skin Care",
     date: "2026-13-04",
-    section: "Beauty"
+    section: "Beauty",
   },
   {
     id: 12,
@@ -257,8 +280,10 @@ const PRODUCTS = [
     price: 999,
     rating: 4.7,
     description: "Enhances Ojas & Overall Wellness",
-    longDescription: "Lotus Seed Leha(Makhana) is a nourishing Ayurvedic herbal formulation prepared using lotus seeds and traditional rejuvenating ingredients. It is known for supporting overall vitality, strengthening the nervous system, and promoting natural energy and stamina. This wholesome leha helps in improving digestion, calming the mind, supporting reproductive health, and enhancing overall well-being through its restorative and balancing properties.",
-    ingredients: "Lotus Seeds (Makhana), Cow’s Ghee, Jaggery, Ashwagandha, Shatavari, Vidarikand, Bala, Pippali, Dry Ginger, Cinnamon, Cardamom, Chia Seeds, Clove, Nutmeg, Jatamansi, Brahmi, Saffron",
+    longDescription:
+      "Lotus Seed Leha(Makhana) is a nourishing Ayurvedic herbal formulation prepared using lotus seeds and traditional rejuvenating ingredients. It is known for supporting overall vitality, strengthening the nervous system, and promoting natural energy and stamina. This wholesome leha helps in improving digestion, calming the mind, supporting reproductive health, and enhancing overall well-being through its restorative and balancing properties.",
+    ingredients:
+      "Lotus Seeds (Makhana), Cow’s Ghee, Jaggery, Ashwagandha, Shatavari, Vidarikand, Bala, Pippali, Dry Ginger, Cinnamon, Cardamom, Chia Seeds, Clove, Nutmeg, Jatamansi, Brahmi, Saffron",
     benefits: [
       "Natural energy & stamina support",
       "Supports immunity and overall wellness",
@@ -267,23 +292,27 @@ const PRODUCTS = [
       "Supports overall vitality and strength",
       "Helps maintain healthy metabolism",
       "Diabetic friendly with low glycemic ingredients",
-      "Supports Healthy Hemoglobin Levels"
+      "Supports Healthy Hemoglobin Levels",
     ],
-    howToApply: "Take 1–2 teaspoons (10–20g) in the morning on an empty stomach or as directed by your wellness expert. Can be consumed with warm milk for better nourishment.",
+    howToApply:
+      "Take 1–2 teaspoons (10–20g) in the morning on an empty stomach or as directed by your wellness expert. Can be consumed with warm milk for better nourishment.",
     note: "Cruelty Free and 100% Organic",
     image: "/lotus_seed_leha.png",
     category: "Wellness",
     date: "2026-05-25",
-    section: "Herbal Medicine"
+    section: "Herbal Medicine",
   },
   {
     id: 13,
     title: "Makhana Leha (Gym Version)",
     price: 1200,
     rating: 4.8,
-    description: "High-protein Ayurvedic blend for strength, recovery & endurance",
-    longDescription: "Vasudhaara High-Protein Gym Version is a premium Ayurvedic protein supplement crafted with lotus seeds (makhana), plant-based proteins, Ashwagandha, Brahmi, pumpkin seeds, flax seeds, and nutrient-rich superfoods to support muscle growth, workout recovery, stamina, and sustained energy naturally. Designed for gym-goers, athletes, and fitness enthusiasts, this high-protein herbal blend helps improve endurance, immunity, focus, and overall wellness without refined sugar or artificial additives. Slow-cooked using traditional Ayurvedic methods, it delivers clean nutrition for strength, performance, and daily vitality.",
-    ingredients: "Lotus Seeds (Makhana), Cow’s Ghee, Jaggery, Ashwagandha, Shatavari, Vidarikand, Bala, Pippali, Dry Ginger, Cinnamon, Cardamom, Chia Seeds, Clove, Nutmeg, Jatamansi, Brahmi, Saffron, Almonds, Cashew, Resins, Pumpkin seeds, Dates, Figs",
+    description:
+      "High-protein Ayurvedic blend for strength, recovery & endurance",
+    longDescription:
+      "Vasudhaara High-Protein Gym Version is a premium Ayurvedic protein supplement crafted with lotus seeds (makhana), plant-based proteins, Ashwagandha, Brahmi, pumpkin seeds, flax seeds, and nutrient-rich superfoods to support muscle growth, workout recovery, stamina, and sustained energy naturally. Designed for gym-goers, athletes, and fitness enthusiasts, this high-protein herbal blend helps improve endurance, immunity, focus, and overall wellness without refined sugar or artificial additives. Slow-cooked using traditional Ayurvedic methods, it delivers clean nutrition for strength, performance, and daily vitality.",
+    ingredients:
+      "Lotus Seeds (Makhana), Cow’s Ghee, Jaggery, Ashwagandha, Shatavari, Vidarikand, Bala, Pippali, Dry Ginger, Cinnamon, Cardamom, Chia Seeds, Clove, Nutmeg, Jatamansi, Brahmi, Saffron, Almonds, Cashew, Resins, Pumpkin seeds, Dates, Figs",
     benefits: [
       "Supports lean muscle growth with high-quality plant protein",
       "Improves strength, stamina, and endurance",
@@ -295,34 +324,38 @@ const PRODUCTS = [
       "Helps reduce inflammation and supports heart health",
       "Diabetic friendly with low glycemic ingredients",
     ],
-    howToApply: "Take 1-2 capsules twice daily with warm water or milk after meals, or as recommended by your health care provider.",
+    howToApply:
+      "Take 1-2 capsules twice daily with warm water or milk after meals, or as recommended by your health care provider.",
     note: "Cruelty free, organic and 100% naturally made",
     image: "/makhana_gym_version.png",
     category: "Wellness",
     date: "2026-05-25",
-    section: "Herbal Medicine"
+    section: "Herbal Medicine",
   },
   {
     id: 14,
-    title: "Amrutha Giloy Syrup",
-    price: 199,
+    title: "Bananti Lehya(200GM)",
+    price: 2999,
     rating: 4.6,
     description: "Traditional immune support and fever relief",
-    longDescription: "Vasudhaara Amrutha Giloy Syrup is formulated with pure Giloy (Guduchi), renowned in Ayurveda as 'Amrita'—the root of immortality. This syrup is a potent immunomodulator that helps fight chronic infections, aids in recovery from fevers, and purifies the blood.",
-    ingredients: "Giloy stem extract (Tinospora cordifolia), tulsi extract, neem, and organic sweetener base.",
+    longDescription:
+      "Vasudhaara Amrutha Giloy Syrup is formulated with pure Giloy (Guduchi), renowned in Ayurveda as 'Amrita'—the root of immortality. This syrup is a potent immunomodulator that helps fight chronic infections, aids in recovery from fevers, and purifies the blood.",
+    ingredients:
+      "Dates (Khajoor), Dried Figs (Anjeer), Apricot (Khubani), Cashew Nuts (Kaju), Almonds (Badam), Shatavari Root (Shatavari), Licorice Root (Yashtimadhu), Cumin Seeds (Jeera), Coriander Seeds (Dhania), Fennel Seeds (Saunf), Cinnamon Sticks (Dalchini), Cloves (Laung), Black Pepper (Kali Mirch), Dry Ginger (Saunth), Nutmeg (Jaiphal), Saffron (Kesar), Coconut Flower (Narikela Pushpa), Cow's Ghee (Go Ghrita).",
     benefits: [
       "Boosts overall immunity and viral defense",
       "Helps manage chronic and recurrent fevers",
       "Supports blood purification and glowing skin",
       "Enhances liver and kidney detoxification processes",
-      "Improves digestion and gut health"
+      "Improves digestion and gut health",
     ],
-    howToApply: "For adults, take 10-15 ml (2-3 teaspoons) with an equal quantity of warm water twice a day. For children above 5, take 5 ml (1 teaspoon) twice a day.",
+    howToApply:
+      "For adults, take 10-15 ml (2-3 teaspoons) with an equal quantity of warm water twice a day. For children above 5, take 5 ml (1 teaspoon) twice a day.",
     note: "Shake well before use. Keep in a cool, dry place away from direct sunlight.",
     image: "/giloy_syrup.png",
     category: "Wellness",
     date: "2026-05-25",
-    section: "Herbal Medicine"
+    section: "Herbal Medicine",
   },
   {
     id: 15,
@@ -330,22 +363,25 @@ const PRODUCTS = [
     price: 349,
     rating: 4.9,
     description: "Soothing relief for joints, muscles & back pain",
-    longDescription: "Crafted using the authentic Mahanarayan method, this specialized pain relief oil is a sesame-based herbal decoction containing over 30 botanical extracts. It deeply penetrates muscle tissues and joint cavities to alleviate stiffness, swelling, and chronic aches.",
-    ingredients: "Sesame oil, Shatavari, Ashwagandha, Bala, Neem, Eucalyptus oil, Camphor, Menthol, and custom herbal blend.",
+    longDescription:
+      "Crafted using the authentic Mahanarayan method, this specialized pain relief oil is a sesame-based herbal decoction containing over 30 botanical extracts. It deeply penetrates muscle tissues and joint cavities to alleviate stiffness, swelling, and chronic aches.",
+    ingredients:
+      "Sesame oil, Shatavari, Ashwagandha, Bala, Neem, Eucalyptus oil, Camphor, Menthol, and custom herbal blend.",
     benefits: [
       "Relieves joint pain, arthritis, and muscle stiffness",
       "Reduces inflammation and swelling in affected areas",
       "Improves blood circulation and flexibility",
       "Soothes sore muscles after intense exercise",
-      "100% natural, quick absorbing formula"
+      "100% natural, quick absorbing formula",
     ],
-    howToApply: "Warm the oil slightly and massage gently over the affected area for 10-15 minutes. Apply a warm compress afterwards for enhanced absorption. Use 2-3 times daily.",
+    howToApply:
+      "Warm the oil slightly and massage gently over the affected area for 10-15 minutes. Apply a warm compress afterwards for enhanced absorption. Use 2-3 times daily.",
     note: "For external use only. Do not apply on broken skin, cuts, or open wounds.",
     image: "/pain_relief_oil.png",
     category: "Pain Relief",
     date: "2026-05-25",
-    section: "Herbal Medicine"
-  }
+    section: "Herbal Medicine",
+  },
 ];
 
 function ShopContent() {
@@ -386,18 +422,32 @@ function ShopContent() {
   const filteredProducts = useMemo(() => {
     return PRODUCTS.filter((product) => {
       const matchesSection = product.section === activeSection;
-      const matchesSearch = product.title.toLowerCase().includes(searchQuery.toLowerCase());
-      const matchesCategory = categoryFilter === "all" || product.category === categoryFilter;
+      const matchesSearch = product.title
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase());
+      const matchesCategory =
+        categoryFilter === "all" || product.category === categoryFilter;
 
       let productCollection = "Other";
-      if (product.title.toLowerCase().includes("lip balm")) productCollection = "LipBalm";
-      else if (product.title.toLowerCase().includes("oil") || product.title.toLowerCase().includes("taila")) productCollection = "Oil";
-      else if (product.title.toLowerCase().includes("heel")) productCollection = "CrackHeel";
+      if (product.title.toLowerCase().includes("lip balm"))
+        productCollection = "LipBalm";
+      else if (
+        product.title.toLowerCase().includes("oil") ||
+        product.title.toLowerCase().includes("taila")
+      )
+        productCollection = "Oil";
+      else if (product.title.toLowerCase().includes("heel"))
+        productCollection = "CrackHeel";
 
       // If active section is Herbal Medicine, ignore collectionQuery since collection filtering only applies to Beauty
-      const matchesCollection = activeSection === "Herbal Medicine" || !collectionQuery || productCollection === collectionQuery;
+      const matchesCollection =
+        activeSection === "Herbal Medicine" ||
+        !collectionQuery ||
+        productCollection === collectionQuery;
 
-      return matchesSection && matchesSearch && matchesCategory && matchesCollection;
+      return (
+        matchesSection && matchesSearch && matchesCategory && matchesCollection
+      );
     });
   }, [searchQuery, categoryFilter, collectionQuery, activeSection]);
 
@@ -405,7 +455,9 @@ function ShopContent() {
     <div className="min-h-screen pt-12 px-6 max-w-7xl mx-auto">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
         <div className="space-y-2">
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent">Shop Our Collection</h1>
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent">
+            Shop Our Collection
+          </h1>
           <p className="text-neutral-400">Discover nature's best secrets.</p>
         </div>
 
@@ -433,10 +485,11 @@ function ShopContent() {
                   // Reset search query when switching sections to ensure a clean view
                   setSearchQuery("");
                 }}
-                className={`relative px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 z-10 ${isActive
-                  ? "text-white"
-                  : "text-neutral-400 hover:text-neutral-200"
-                  }`}
+                className={`relative px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 z-10 ${
+                  isActive
+                    ? "text-white"
+                    : "text-neutral-400 hover:text-neutral-200"
+                }`}
               >
                 {isActive && (
                   <motion.div
@@ -464,7 +517,8 @@ function ShopContent() {
           {filteredProducts.length > 0 ? (
             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-8">
               {filteredProducts.map((product, index) => {
-                const dynamicRating = averageRatings[product.id]?.average_rating || null;
+                const dynamicRating =
+                  averageRatings[product.id]?.average_rating || null;
                 return (
                   <motion.div
                     key={product.id}
@@ -499,7 +553,13 @@ function ShopContent() {
 
 export default function ShopPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen flex items-center justify-center pt-12 text-neutral-400">Loading shop...</div>}>
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex items-center justify-center pt-12 text-neutral-400">
+          Loading shop...
+        </div>
+      }
+    >
       <ShopContent />
     </Suspense>
   );
