@@ -350,9 +350,9 @@ const PRODUCTS = [
       "Improves digestion and gut health",
     ],
     howToApply:
-      "For adults, take 10-15 ml (2-3 teaspoons) with an equal quantity of warm water twice a day. For children above 5, take 5 ml (1 teaspoon) twice a day.",
-    note: "Shake well before use. Keep in a cool, dry place away from direct sunlight.",
-    image: "/giloy_syrup.png",
+      "Take 2-3 teaspoons with an equal quantity of warm water twice a day",
+    note: "Cruelty free, organic and 100% naturally made",
+    image: "/Bananti_lehya.png",
     category: "Wellness",
     date: "2026-05-25",
     section: "Herbal Medicine",
