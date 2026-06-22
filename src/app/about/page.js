@@ -13,10 +13,10 @@ export default function AboutPage() {
         className="space-y-12 text-center md:text-left"
       >
         <h1 className="text-5xl font-bold bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent mb-8">About Vasudhaara</h1>
-        
+
         {/* Who We Are */}
         <section className="space-y-6">
-          <h2 className="text-3xl font-semibold text-white">Who We Are</h2>
+          <h2 className="text-3xl font-semibold text-white">Who Are We</h2>
           <div className="prose prose-invert prose-lg max-w-none text-neutral-300 space-y-6">
             <p>
               Vasudhaara was created from the need for care that families can truly trust. Our roots trace back to our ancestors, where wellness began at home. What started as simple yet powerful home remedies prepared by our grandmother has grown into a brand built on generations of belief, patience, and natural healing.
@@ -46,7 +46,7 @@ export default function AboutPage() {
         {/* Our Philosophy */}
         <section className="space-y-6">
           <h2 className="text-3xl font-semibold text-white">Our Philosophy</h2>
-           <div className="prose prose-invert prose-lg max-w-none text-neutral-300 space-y-6">
+          <div className="prose prose-invert prose-lg max-w-none text-neutral-300 space-y-6">
             <p>
               At Vasudhaara, care is intentional. We believe wellness is built through consistency, simplicity, and respect for nature.
             </p>

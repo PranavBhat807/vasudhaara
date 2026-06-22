@@ -60,8 +60,8 @@ export default function ProductCard({ title, price, description, image, images, 
 
   const handleAddToCart = (e) => {
     if (e) {
-      e.preventDefault();
-      e.stopPropagation();
+      if (typeof e.preventDefault === "function") e.preventDefault();
+      if (typeof e.stopPropagation === "function") e.stopPropagation();
     }
     addToCart({ id, title, price, image });
     setIsAdded(true);
@@ -249,6 +249,7 @@ export default function ProductCard({ title, price, description, image, images, 
             {description}
           </p>
           <Button
+            color={isAdded ? "success" : "default"}
             className={`w-full mt-2 font-semibold shadow-lg transition-all z-20 relative ${
               isAdded ? "bg-green-500 text-white" : "bg-gradient-to-r from-pink-500 to-yellow-500 text-white"
             } touch-manipulation`}
